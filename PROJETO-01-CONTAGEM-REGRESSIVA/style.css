@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('https://images.pexels.com/photos/220201/pexels-photo-220201.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    min-height: 100vh;
+    font-family: "Poppis", sans-serif;
+    margin: 0;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-weight: 900;
+    font-size: 4rem;
+    margin-top: 5rem;
+    text-shadow: black 5px 5px 10px ;
+}
+
+.contagem-caixa {
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-shadow: black 5px 5px 10px ;
+}
+
+.Texto-prin {
+    font-weight: bold;
+    font-size: 6rem;
+    line-height: 1;
+    margin: 1rem 2rem;
+}
+
+.subContagem {
+    text-align: center;
+}
+
+.subContagem span {
+    font-size: 1.3rem;;
+}
+
