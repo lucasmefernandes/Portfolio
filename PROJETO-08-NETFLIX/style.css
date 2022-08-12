@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #17162E;
+
+}
+
+.container-pesquisa-global {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cc {
+    margin: 30px;
+    font-family: Kumbh Sans;
+
+}
+.txt-principal {
+    color: white;
+    font-size: 36px;
+}
+
+.input-pesquisa {  
+    background: #454558;
+    color: #8A8A8A;
+    font-size: 18px;
+    height: 74px;
+    width: 634px;
+    border-radius: 8px;
+    border: none;
+}
+
+input {
+    padding-left: 10px;
+}
+
+.container-input-favoritos {
+    color: white;
+    flex-direction: ;
+}
