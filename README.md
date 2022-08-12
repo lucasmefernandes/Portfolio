@@ -31,18 +31,18 @@ Basta clicar no Link para visualizar o projeto! (Sites hospedados atráves do Gi
     Executar o PROJETO-07-CORDEL-SITE
 </a>
 <br>
-<a href="https://lukones.github.io/Portfolio/PROJETO-06-ANDROID-SITE/adroid.html" targent="_blank">
-    Executar o PROJETO-06-ANDROID-SITE
+<a href="https://lukones.github.io/Portfolio/PROJETO-08-NETFLIX/index.html" targent="_blank">
+    Executar o PROJETO-08-NETFLIX
 </a>
 <br>
-<a href="https://lukones.github.io/Portfolio/PROJETO-06-ANDROID-SITE/adroid.html" targent="_blank">
-    Executar o PROJETO-06-ANDROID-SITE
+<a href="https://lukones.github.io/Portfolio/PROJETO-09-SITE-JOGO-DADOS/dicee.html" targent="_blank">
+    Executar o PROJETO-09-SITE-JOGO-DADOS
 </a>
 <br>
-<a href="https://lukones.github.io/Portfolio/PROJETO-06-ANDROID-SITE/adroid.html" targent="_blank">
-    Executar o PROJETO-06-ANDROID-SITE
+<a href="https://lukones.github.io/Portfolio/PROJETO-10-MEU-SITE/index.html" targent="_blank">
+    Executar o PROJETO-10-MEU-SITE
 </a>
 <br>
-<a href="https://lukones.github.io/Portfolio/PROJETO-06-ANDROID-SITE/adroid.html" targent="_blank">
-    Executar o PROJETO-06-ANDROID-SITE
+<a href="https://lukones.github.io/Portfolio/PROJETO-11-TINDER-PARA-CACHORRO/index.html" targent="_blank">
+    Executar o PROJETO-11-TINDER-PARA-CACHORRO
 </a>
