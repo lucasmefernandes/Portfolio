@@ -8,22 +8,41 @@ Basta clicar no Link para visualizar o projeto! (Sites hospedados atráves do Gi
     Executar o PROJETO-01-CONTAGEM-REGRESSIVA
 </a>
 <br>
-<a href="https://lukones.github.io/repository-evolution/DESAFIOS/DESAFIO%20010/adroid.html#" targent="_blank">
-    Executar o Projeto 02
+<a href="https://lukones.github.io/Portfolio/PROJETO-02-CAPITAO-AMERICA/index.html" targent="_blank">
+    Executar o PROJETO-02-CAPITAO-AMERICA
+<br>
+<a href="https://lukones.github.io/Portfolio/PROJETO-03-LANDING-PAGE-CVA/index.html" targent="_blank">
+    Executar o PROJETO-03-LANDING-PAGE-CVA
 </a>
 <br>
-<a href="https://lukones.github.io/repository-evolution/FRONTENDMENTOR/DESAFIO-001/qr-code-component-main/index.html" targent="_blank">
-    Executar o Projeto 03
+<a href="https://lukones.github.io/Portfolio/PROJETO-04-FRONTENDMENTOR-D1/index.html" targent="_blank">
+    Executar o PROJETO-04-FRONTENDMENTOR-D1
 </a>
 <br>
-<a href="https://lukones.github.io/repository-evolution/PROJETO-01-COUNTDOWN-TIMER/index.html" targent="_blank">
-    Executar o Projeto 04
+<a href="https://lukones.github.io/Portfolio/PROJETO-05-INICIANTE/index.html" targent="_blank">
+    Executar o PROJETO-05-INICIANTE
 </a>
 <br>
-<a href="https://carvalhovendasautomaticas.com/" targent="_blank">
-    Executar o Projeto 05
+<a href="https://lukones.github.io/Portfolio/PROJETO-06-ANDROID-SITE/adroid.html" targent="_blank">
+    Executar o PROJETO-06-ANDROID-SITE
 </a>
 <br>
-<a href="https://lukones.github.io/repository-evolution/FULLSTACK/CURSO-UDEMY/index.html" targent="_blank">
-    Executar o Projeto 06
+<a href="https://lukones.github.io/Portfolio/PROJETO-07-CORDEL-SITE/index.html" targent="_blank">
+    Executar o PROJETO-07-CORDEL-SITE
+</a>
+<br>
+<a href="https://lukones.github.io/Portfolio/PROJETO-06-ANDROID-SITE/adroid.html" targent="_blank">
+    Executar o PROJETO-06-ANDROID-SITE
+</a>
+<br>
+<a href="https://lukones.github.io/Portfolio/PROJETO-06-ANDROID-SITE/adroid.html" targent="_blank">
+    Executar o PROJETO-06-ANDROID-SITE
+</a>
+<br>
+<a href="https://lukones.github.io/Portfolio/PROJETO-06-ANDROID-SITE/adroid.html" targent="_blank">
+    Executar o PROJETO-06-ANDROID-SITE
+</a>
+<br>
+<a href="https://lukones.github.io/Portfolio/PROJETO-06-ANDROID-SITE/adroid.html" targent="_blank">
+    Executar o PROJETO-06-ANDROID-SITE
 </a>
