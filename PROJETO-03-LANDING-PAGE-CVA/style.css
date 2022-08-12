@@ -1,0 +1,681 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*font-family: 'Poppins', sans-serif;*/
+
+/*font-family: 'Roboto', sans-serif;*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    min-height: 200px;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
+
+.top {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+header h1 {
+    font-size: 40px;
+    font-weight: 800;
+    padding-top: 15px;
+    text-align: center;
+    color: white;
+}
+
+header span {
+    color: red;
+}
+
+header h2 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 850px;
+    text-align: center;
+    color: white;
+}
+
+main {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 30px 30px 30px 30px;
+}
+
+main .foto{
+    padding-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    padding-bottom: 35px;
+}
+
+main .foto img {
+    border-radius: 30px;
+    box-shadow: 1px 1px 4.1px 1px rgba(0, 0, 0, 0.5);
+    
+}
+
+main .description {
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    color:black;
+    padding: 0px;
+}
+
+
+
+main .description h1 {
+    font-size: 54px;
+    text-align: center;
+    padding-bottom: 2rem;
+    padding-top: 1.5rem;
+    color: black;
+}
+
+main .description p {
+    width: 850px;
+    text-align: justify;
+    text-indent: 3rem;
+    line-height: 2rem;
+    color: black;
+    
+}
+
+#bolder {
+    font-weight: 600;
+    color: red;
+
+}
+
+main .sec1 {
+    background-image: url(imgs/img\ parallax/escritorio-fullhd.jpg);
+    width: 100%;
+    height: 65vh;
+}
+
+main .img1 {
+    background-color: rgb(51, 51, 51);
+    color: white;
+    box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.473);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+main .sec2 {
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+
+main .sec2 .ebook {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 850px;
+    text-align: justify;
+    border-radius: 30px;
+    padding: 30px;
+    padding-bottom: 2.201rem;
+    border-radius: 32px;
+    background-color: rgb(73, 10, 54);
+
+    
+    
+}
+
+
+main .sec2 .ebook-photo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    font-size: 30px;
+    
+}
+
+
+main .sec2 .ebook-span {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: #fff;
+    
+
+}
+
+main .sec2 .ebook-span h2 {
+    text-align: center;
+    font-size: 30px;
+    padding-bottom: 1.5rem;
+}
+
+
+main .sec2 .ebook-span p {
+    display: flex;
+    flex-direction: column;
+    width: 850px;
+    text-align: justify;
+    text-indent: 3rem;
+    line-height: 2rem;
+    color: #fff;
+    padding: 20px;
+}
+
+main .sec2 .ebook-span a {
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+    text-decoration: none;
+}
+
+main .sec2 .ebook button {
+    background-color: green;
+    color: black;
+    cursor: pointer;
+    border: none;
+    font-family:'Poppins', sans-serif;
+    font-weight: 800;
+    width: 700px;
+    height: 50px;
+    border-radius: 0.8rem;
+    transition: 0.3s;
+}
+
+main .sec2 .ebook button:hover {
+    background-color: white;
+
+}
+
+main button {
+    background-color: green;
+    color: black;
+}
+
+main button:hover {
+    background-color: rgb(255, 255, 255);
+    color: green;
+    box-shadow: inset 0 0 0 3px green;
+    transform: scale(1.2);
+}
+
+main .sec3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2.201rem;
+    color: black;
+    
+}
+
+main .sec3 .training {
+    padding-top: 1.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main .sec3 .training img {
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+
+main .sec3 .training h3 {
+    padding-bottom: 1rem;
+}
+
+.training p {
+    padding: 16px;
+    text-align: justify;
+    text-indent: 3rem;
+    line-height: 2rem
+}
+
+
+main .sec3 .training .sales {
+    width: 500px;
+    margin-bottom: 3rem;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 1px rgb(73, 10, 54);
+    border-radius: 0.8rem;
+    box-shadow: 5px 5px 0px 0.3px #770f54;
+
+}
+
+
+main .sec3 .training .affiliates {
+    width: 500px;
+    margin-bottom: 3rem;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 1px rgb(73, 10, 54);
+    border-radius: 0.8rem;
+    box-shadow: 5px 5px 0px 0.3px #770f54;
+    
+}
+
+
+
+main .sec3 .training .product-3 {
+    width: 500px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 1px rgb(73, 10, 54);
+    border-radius: 0.8rem;
+    box-shadow: 5px 5px 0px 0.3px #770f54;
+
+}
+
+.sales:hover{
+    transform: scale(1.04);
+    box-shadow: 0px 0px 4px 0px rgba(119, 15, 84, 0);
+    transition: 0.5s;
+}
+
+.affiliates:hover{
+    transform: scale(1.04);
+    box-shadow: 0px 0px 4px 0px rgba(119, 15, 84, 0);
+    transition: 0.5s;
+}
+
+.product-3:hover{
+    transform: scale(1.04);
+    box-shadow: 0px 0px 4px 0px rgba(119, 15, 84, 0);
+    transition: 0.5s;
+}
+
+main .sec3 button {
+    padding: 6px;
+    font-family:'Poppins', sans-serif;
+    font-weight: 600;
+    cursor: pointer; 
+    color: black;
+    border: none;
+    width: 400px;
+    border-radius: 0.8rem;
+    transition: 0.3s;
+}
+
+main .sec3 a {
+    padding-bottom: 0.4rem;
+}
+
+main .social-media {
+    padding-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 500px;
+}
+
+main .social-media .whatsapp {
+    width: 150px;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px rgb(73, 10, 54);
+    border-radius: 0.8rem;
+    box-shadow: 5px 5px 0px 0.3px #770f54; 
+
+}
+
+.whatsapp:hover {
+    background-color: rgba(3, 156, 3, 0.716);
+    transform: scale(1.07);
+}
+
+
+main .social-media .youtube {
+    width: 150px;
+    height: 109.99px;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px rgb(73, 10, 54);
+    border-radius: 0.8rem;
+    box-shadow: 5px 5px 0px 0.3px #770f54; 
+
+}
+
+.youtube:hover {
+    background-color: rgb(255, 0, 0);
+    transform: scale(1.07);
+}
+
+
+main .social-media .instagram {
+    width: 150px;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px rgb(73, 10, 54);
+    border-radius: 0.8rem;
+    box-shadow: 5px 5px 0px 0.3px #770f54; 
+
+}
+
+.instagram:hover {
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    transform: scale(1.07);
+}
+
+
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: black;
+    color: white;
+    font-size: 10px;
+    margin-top: 4rem;
+    text-align: center;
+    padding: 5px;
+   
+}
+
+footer a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+nav {
+    padding: 1rem 0px 1rem 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    justify-content: space-around;
+    font-weight: 700;
+    
+}
+
+.ebook-photo img:hover {
+    transform: scale(1.07);
+    transition: 0.5s;
+
+}
+
+
+@media screen and  (max-width: 850px ) {
+
+   
+    
+    header {
+        height: 90px;
+        padding-bottom: 0rem;
+        padding: 15px;
+        
+    }
+
+
+
+    header h1 {
+        font-size: 18px;
+        margin-bottom: auto;
+    }
+    
+
+
+    header h2 {
+        font-size: 13px;
+        padding-top: 1rem;
+        margin-bottom: 0px;
+        width: 90%;
+        text-align: justify;
+   
+    }
+
+
+
+    main {
+        width: 100%;
+        
+    }
+
+ 
+
+    main .description {
+       width: 100%;
+       padding: 0;
+
+    }
+
+    main .text-description {
+        padding: 0px 30px 0px 30px;
+    }
+
+    main .text-description h1 {
+        font-size: 37px;
+    }
+
+
+
+    .sec1 img {
+        width: 300px;
+    }
+
+
+
+    main .sec1 {
+        background-image: url(imgs/img\ parallax/escritorio-fullhd.jpg);
+        width: 100%;
+        height: 40vh;
+    }
+
+
+
+    main .description h1 {
+        padding-top: 32px;
+    }
+
+
+
+    main .description p {
+        text-indent: 1rem;
+        width: 100%;
+    }
+
+
+
+    main .sec2 {
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        padding-bottom: 1.5rem;
+    }
+
+
+
+    main .sec2 .ebook {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        
+    }
+
+
+
+    main .sec2 .ebook h1{
+        font-size: 25px;
+        
+    }
+
+
+
+    main .sec2 .ebook h2{
+        font-size: 25px;
+    }
+
+
+    main .sec2 .ebook-photo {
+        font-size: 24px;
+    }
+
+
+
+    main .sec2 .ebook-photo img{
+        width: 100%;
+    }
+
+    main .sec2 .ebook-span {
+        width: 100%;
+    }
+
+    main .sec2 .ebook-span p {
+        width: 100%;
+        padding: 0px;
+    }
+
+
+
+    main .sec3 {
+        width: 100%;
+    }
+
+
+
+    main .sec3 h1 {
+        font-size: 20px;
+        padding: 15px;
+        text-align: center;
+    }
+    
+
+
+    main .sec3 h3 {
+        text-align: center;
+    }
+
+
+
+    main .sec3 p {
+        text-indent: 1rem;
+    }
+
+
+
+    main .sec3 .training {
+        width: 100%;
+        padding: 15px;
+
+    }
+
+
+
+    main .sec3 .training .sales {
+        width: 100%;
+    }
+    
+
+
+    main .sec3 .training .sales button {
+        width: 100%;
+        
+
+    }
+     
+
+
+    main .sec3 .training .affiliates {
+        width: 100%;
+     
+    }
+
+
+
+    main .sec3 .training .affiliates button {
+        width: 100%;
+
+    }
+     
+
+
+    main .sec3 .training .product-3 {
+        width: 100%;
+    }
+
+
+
+    main .sec3 .training .product-3 button {
+        width: 100%;
+
+    }
+
+
+    main .social-media {
+        width: 100%;
+        flex-direction: column;
+        height: 400px;
+    }
+
+
+
+    footer p {
+        padding: 15px;
+        text-align: justify;
+    }
+
+
+
+    nav {
+        padding: 1rem 0px 1rem 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+        justify-content: space-around;
+        font-weight: 700;
+    
+    }
+
+}
