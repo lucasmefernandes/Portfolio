@@ -46,3 +46,7 @@ Basta clicar no Link para visualizar o projeto! (Sites hospedados atráves do Gi
 <a href="https://lukones.github.io/Portfolio/PROJETO-11-TINDER-PARA-CACHORRO/index.html" targent="_blank">
     Executar o PROJETO-11-TINDER-PARA-CACHORRO
 </a>
+<br>
+<a href="https://www.metodosintonia.com" targent="_blank">
+    Executar o PROJETO-12-SITE-MARKETING-DIGITAL
+</a>
