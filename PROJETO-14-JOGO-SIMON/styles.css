@@ -51,3 +51,93 @@ body {
   box-shadow: 0 0 20px white;
   background-color: grey;
 }
+
+/* for desktops */
+@media only screen and (min-width: 1367px) {
+  
+}
+
+/* for laptops */
+@media only screen and (min-width: 991px) and (max-width: 1366px) {
+  .container {
+    display: flex;
+    width: 50%;
+    margin: auto;
+  }
+
+  .btn {
+    margin: 15px;
+    display: inline-block;
+    height: 150px;
+    width: 150px;
+  }
+
+  #level-title {
+    font-size: 2rem;
+  }
+
+}
+
+/* for large tablets */
+@media only screen and (min-width: 769px) and (max-width: 990px) {
+  .container {
+    display: flex;
+    width: 50%;
+    margin: auto;
+  }
+
+  .btn {
+    margin: 15px;
+    display: inline-block;
+    height: 150px;
+    width: 150px;
+  }
+
+  #level-title {
+    font-size: 2rem;
+  }
+
+}
+
+/* for smaller tablets */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+  }
+
+  .btn {
+    margin: 15px;
+    display: inline-block;
+    height: 150px;
+    width: 150px;
+  }
+
+  #level-title {
+    font-size: 2rem;
+  }
+
+}
+
+/* for cellphones */
+@media only screen and (max-width: 480px) {
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+  }
+
+  .btn {
+    margin: 15px;
+    display: inline-block;
+    height: 125px;
+    width: 125px;
+  }
+
+  #level-title {
+    font-size: 2rem;
+  }
+}
