@@ -54,3 +54,7 @@ Basta clicar no Link para visualizar o projeto! (Sites hospedados atráves do Gi
 <a href="https://lukones.github.io/Portfolio/PROJETO-13-BATERIA-ONLINE/index.html" targent="_blank">
     Executar o PROJETO-13-BATERIA-ONLINE
 </a>
+<br>
+<a href="https://lukones.github.io/Portfolio/PROJETO-14-JOGO-SIMON/index.html" targent="_blank">
+    Executar o PROJETO-14-JOGO-SIMON
+</a>
