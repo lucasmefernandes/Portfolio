@@ -1,3 +1,7 @@
+import { keyApi } from "./api.js"
+
+
+
 const caixaFilmes = document.querySelector(".containerFilmes");
 
 const containerFilmes = [
