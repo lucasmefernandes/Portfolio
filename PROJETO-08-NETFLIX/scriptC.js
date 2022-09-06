@@ -1,4 +1,4 @@
-import { keyApi } from "./api.js"
+import { keyApi } from "./apis/api.js"
 
 
 
