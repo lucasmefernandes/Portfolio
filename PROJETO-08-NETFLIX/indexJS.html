@@ -6,6 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <!-- Google Fontes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <title>#7DaysOfCode</title>
 </head>
 
@@ -19,6 +25,7 @@
 
             <div class="containerInputPesquisa marginGeral">
                 <input type="text" class="input-pesquisa" placeholder="Digite algum filme para pesquisar..." >
+                <img src="imgs/search-icon.svg" alt="Ícone de pesquisa" class="searchIcon">
             </div>
             <div class="containerInputFavoritos marginGeral">
                 <input type="checkbox" name="favorito" id="Favoritos" value="Favoritos">
@@ -31,7 +38,7 @@
         <div class="containerFilmes"></div>
 
     </main>
-    <script src="scriptC.js"></script>
+    <script src="scriptC.js" type="module"></script>
 </body>
 
 </html>

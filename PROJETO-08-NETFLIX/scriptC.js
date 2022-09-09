@@ -1,82 +1,59 @@
-import { keyApi } from "./apis/api.js"
+import { keyApi } from "./cod/chave.js"
 
+const caixaFilmes = document.querySelector(".containerFilmes")
+const input = document.querySelector("input")
+const botaoBuscar = document.querySelector('.searchIcon')
 
+botaoBuscar.addEventListener('click', buscarFilme)
 
-const caixaFilmes = document.querySelector(".containerFilmes");
-
-const containerFilmes = [
-    {
-        imagem: 'imgs/image-1.svg',
-        titulo: 'Vingadores: Endgame',
-        nota: 9.7,
-        estrela: 'imgs/star.svg',
-        ano: 2019,
-        descrição: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        favoritado: false
-    },
-    {
-        imagem: 'imgs/image-2.svg',
-        titulo: 'Doctor Strange',
-        nota: 9,
-        estrela: 'imgs/star.svg',
-        ano: 2022,
-        descrição: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        favoritado: true
-    },
-    {
-        imagem: 'imgs/image-3.svg',
-        titulo: 'Batman',
-        nota: 9.5,
-        estrela: 'imgs/star.svg',
-        ano: 2022,
-        descrição: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        favoritado: false
-    },
-    {
-        imagem: 'imgs/image-4.svg',
-        titulo: 'Avatar',
-        nota: 9.9,
-        estrela: 'imgs/star.svg',
-        ano: 2009,
-        descrição: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        favoritado: false
-    },
-    {
-        imagem: 'imgs/image-5.svg',
-        titulo: 'Avengers: Age of Ultron',
-        nota: 7.6,
-        estrela: 'imgs/star.svg',
-        ano: 2015,
-        descrição: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        favoritado: false
-    },
-    {
-        imagem: 'imgs/image-6.svg',
-        titulo: 'Vingadores: Guerra do Infinito ',
-        nota: 8.9,
-        estrela: 'imgs/star.svg',
-        ano: 2018,
-        descrição: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        favoritado: false
-    },
-    {
-        imagem: 'imgs/image-8.svg',
-        titulo: 'Os Vingadores',
-        nota: 7.2,
-        estrela: 'imgs/star.svg',
-        ano: 2012,
-        descrição: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        favoritado: false
+input.addEventListener('keyup', function(event){
+    console.log(event.key)
+    if (event.keyCode == 13) {
+        buscarFilme()
+        return
     }
-];
+})
 
-window.onload = function () {
+async function buscarFilme() {
+    const valordoInput = input.value
+    if (valordoInput != '') {
+        limparfilmes()
+        const containerFilmes = await buscarFilmes(valordoInput)
+        containerFilmes.forEach(filmes => renderizarFilmes(filmes))
+    }
+}
+
+function limparfilmes() {
+    caixaFilmes.innerHTML = ''
+}
+
+async function buscarFilmes(title) {
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=${keyApi}&query=${title}&language=en-US&page=1`
+    const respostaFetch = await fetch(url)
+    const { results } = await respostaFetch.json()
+    return results
+}
+
+async function entradaFilmesPopular() {
+    const url = `https://api.themoviedb.org/3/movie/popular?api_key=${keyApi}&language=en-US&page=1`
+    const respostaFetch = await fetch(url)
+    const { results } = await respostaFetch.json()
+    return results
+}
+
+window.onload = async function () {
+    const containerFilmes = await entradaFilmesPopular()
     containerFilmes.forEach(filmes => renderizarFilmes(filmes))
-};
+}
 
 function renderizarFilmes(filmes) {
 
-    const { imagem, titulo, nota, ano, estrela, descrição, favoritado } = filmes
+    const {poster_path, title, vote_average, release_date, overview} = filmes
+    const favoritado = false
+    const estrela = 'imgs/star.svg'
+
+    const ano = new Date(release_date).getFullYear();
+    const imagem = `https://image.tmdb.org/t/p/w500${poster_path}`;
 
     const criandoFilmes = document.createElement('div');
     criandoFilmes.classList.add('filmes');
@@ -99,7 +76,7 @@ function renderizarFilmes(filmes) {
     criandoNomeFilme.appendChild(criandoFavStar);
 
     const criandoH2 = document.createElement('h2');
-    criandoH2.textContent = `${titulo} ` + `(${ano})`;
+    criandoH2.textContent = `${title} ` + `(${ano})`;
     criandoFavStar.appendChild(criandoH2);
 
     const criandoEstrelaFilme = document.createElement('div');
@@ -114,7 +91,7 @@ function renderizarFilmes(filmes) {
 
     const criandoParagrafoEstrelaFilme = document.createElement('p');
     criandoParagrafoEstrelaFilme.classList.add('space');
-    criandoParagrafoEstrelaFilme.textContent = nota;
+    criandoParagrafoEstrelaFilme.textContent = vote_average;
     criandoEstrelaFilme.appendChild(criandoParagrafoEstrelaFilme);
 
     const criandoImg2EstrelaFilme = document.createElement('img');
@@ -130,8 +107,48 @@ function renderizarFilmes(filmes) {
     criandoFilmes.appendChild(criandoDescricaoFilme);
 
     const criandoParagrafoDescricaoFilme = document.createElement('p');
-    criandoParagrafoDescricaoFilme.textContent = descrição;
+    criandoParagrafoDescricaoFilme.textContent = overview;
     criandoDescricaoFilme.appendChild(criandoParagrafoDescricaoFilme);
 
 
 };
+
+function favoriteButtonPressed(event, movie) {
+    const favoriteState = {
+      favorited: 'images/heart-fill.svg',
+      notFavorited: 'images/heart.svg'
+    }
+  
+    if(event.target.src.includes(favoriteState.notFavorited)) {
+      // aqui ele será favoritado
+      event.target.src = favoriteState.favorited
+      saveToLocalStorage(movie)
+    } else {
+      // aqui ele será desfavoritado
+      event.target.src = favoriteState.notFavorited
+      removeFromLocalStorage(movie.id)
+    }
+  }
+  
+  function getFavoriteMovies() {
+    return JSON.parse(localStorage.getItem('favoriteMovies'))
+  }
+  
+  function saveToLocalStorage(movie) {
+    const movies = getFavoriteMovies() || []
+    movies.push(movie)
+    const moviesJSON = JSON.stringify(movies)
+    localStorage.setItem('favoriteMovies', moviesJSON)
+  }
+  
+  function checkMovieIsFavorited(id) {
+    const movies = getFavoriteMovies() || []
+    return movies.find(movie => movie.id == id)
+  }
+  
+  function removeFromLocalStorage(id) {
+    const movies = getFavoriteMovies() || []
+    const findMovie = movies.find(movie => movie.id == id)
+    const newMovies = movies.filter(movie => movie.id != findMovie.id)
+    localStorage.setItem('favoriteMovies', JSON.stringify(newMovies))
+  }
