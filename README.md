@@ -58,3 +58,7 @@ Basta clicar no Link para visualizar o projeto! (Sites hospedados atráves do Gi
 <a href="https://lukones.github.io/Portfolio/PROJETO-14-JOGO-SIMON/index.html" target="_blank">
     Executar o PROJETO-14-JOGO-SIMON
 </a>
+<br>
+<a href="https://tranquil-plateau-62629.herokuapp.com" target="_blank">
+    Executar o PROJETO-15-E-MAIL-MARKETING
+</a>
