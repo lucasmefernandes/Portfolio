@@ -3,6 +3,9 @@ import { keyApi } from "./cod/chave.js"
 const caixaFilmes = document.querySelector(".containerFilmes")
 const input = document.querySelector("input")
 const botaoBuscar = document.querySelector('.searchIcon')
+const check = document.querySelector("input[type='checkbox']")
+
+check.addEventListener('change', checkStatus)
 
 botaoBuscar.addEventListener('click', buscarFilme)
 
@@ -13,6 +16,18 @@ input.addEventListener('keyup', function(event){
         return
     }
 })
+
+function checkStatus() {
+  const isChecked  = check.checked
+  if (isChecked) {
+    limparfilmes()
+    const filme = CriarFavoritos() || []
+    filme.forEach(filmes => renderizarFilmes(filmes))
+  } else {
+    limparfilmes()
+    todosfilmes()
+  }
+}
 
 async function buscarFilme() {
     const valordoInput = input.value
@@ -41,15 +56,19 @@ async function entradaFilmesPopular() {
     return results
 }
 
-window.onload = async function () {
+async function todosfilmes() {
     const containerFilmes = await entradaFilmesPopular()
     containerFilmes.forEach(filmes => renderizarFilmes(filmes))
 }
 
+window.onload = function() {
+    todosfilmes()
+}
+
 function renderizarFilmes(filmes) {
 
-    const {poster_path, title, vote_average, release_date, overview} = filmes
-    const favoritado = false
+    const {id, poster_path, title, vote_average, release_date, overview} = filmes
+    const favoritado = checkMovieIsFavorited(id)
     const estrela = 'imgs/star.svg'
 
     const ano = new Date(release_date).getFullYear();
@@ -96,12 +115,15 @@ function renderizarFilmes(filmes) {
 
     const criandoImg2EstrelaFilme = document.createElement('img');
     criandoImg2EstrelaFilme.src = favoritado ? 'imgs/heart-red.svg' : 'imgs/heart.svg';
+    criandoImg2EstrelaFilme.classList.add("favoriteImage");
+    criandoImg2EstrelaFilme.addEventListener('click', (event) => botaoFavoritoPressionado(event, filmes));
+
     criandoEstrelaFilme.appendChild(criandoImg2EstrelaFilme);
 
     const criandoParagrafo2EstrelaFilme = document.createElement('p');
     criandoParagrafo2EstrelaFilme.textContent = "Favoritar";
     criandoEstrelaFilme.appendChild(criandoParagrafo2EstrelaFilme);
-
+    
     const criandoDescricaoFilme = document.createElement('div');
     criandoDescricaoFilme.classList.add('CaixaDescricaoFilme');
     criandoFilmes.appendChild(criandoDescricaoFilme);
@@ -113,42 +135,40 @@ function renderizarFilmes(filmes) {
 
 };
 
-function favoriteButtonPressed(event, movie) {
+function botaoFavoritoPressionado(event, filmes) {
     const favoriteState = {
-      favorited: 'images/heart-fill.svg',
-      notFavorited: 'images/heart.svg'
+      favorito: 'imgs/heart-red.svg',
+      naofavorito: 'imgs/heart.svg'
     }
   
-    if(event.target.src.includes(favoriteState.notFavorited)) {
-      // aqui ele será favoritado
-      event.target.src = favoriteState.favorited
-      saveToLocalStorage(movie)
+    if(event.target.src.includes(favoriteState.naofavorito)) {
+      event.target.src = favoriteState.favorito
+      salvarnolocal(filmes)
     } else {
-      // aqui ele será desfavoritado
-      event.target.src = favoriteState.notFavorited
-      removeFromLocalStorage(movie.id)
+      event.target.src = favoriteState.naofavorito
+      excluirlocal(filmes.id)
     }
   }
   
-  function getFavoriteMovies() {
-    return JSON.parse(localStorage.getItem('favoriteMovies'))
+  function CriarFavoritos() {
+    return JSON.parse(localStorage.getItem('favoritaFilmes'))
   }
   
-  function saveToLocalStorage(movie) {
-    const movies = getFavoriteMovies() || []
-    movies.push(movie)
+  function salvarnolocal(filmes) {
+    const movies = CriarFavoritos() || []
+    movies.push(filmes)
     const moviesJSON = JSON.stringify(movies)
-    localStorage.setItem('favoriteMovies', moviesJSON)
+    localStorage.setItem('favoritaFilmes', moviesJSON)
   }
   
   function checkMovieIsFavorited(id) {
-    const movies = getFavoriteMovies() || []
-    return movies.find(movie => movie.id == id)
+    const movies = CriarFavoritos() || []
+    return movies.find(filmes => filmes.id == id)
   }
   
-  function removeFromLocalStorage(id) {
-    const movies = getFavoriteMovies() || []
-    const findMovie = movies.find(movie => movie.id == id)
-    const newMovies = movies.filter(movie => movie.id != findMovie.id)
-    localStorage.setItem('favoriteMovies', JSON.stringify(newMovies))
+  function excluirlocal(id) {
+    const movies = CriarFavoritos() || []
+    const findMovie = movies.find(filmes => filmes.id == id)
+    const newMovies = movies.filter(filmes => filmes.id != findMovie.id)
+    localStorage.setItem('favoritaFilmes', JSON.stringify(newMovies))
   }
