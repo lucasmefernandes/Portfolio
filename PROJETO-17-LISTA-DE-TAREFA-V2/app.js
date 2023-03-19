@@ -4,7 +4,7 @@ const mongoose = require("mongoose"); // Importa o módulo mongoose
 const _ = require("lodash");
 require('dotenv').config();
 
-const dbHost = process.env.DB_HOST;
+const dbHost = process.env.HOST_DB;
 const app = express(); // Cria uma nova instância do Express
 
 app.set('view engine', 'ejs'); // Define a engine de visualização como ejs
