@@ -163,9 +163,7 @@ app.get("/about", function (req, res) {
   res.render("about");
 });
 
-// Inicia o servidor na porta 3000
-app.listen(3000, function () {
-
-  // Registra uma mensagem de confirmação no console
-  console.log("Server started on port 3000");
+const port = process.env.PORT || 8080;
+app.listen(port, function () {
+  console.log(`Server started on port ${port}`);
 });
