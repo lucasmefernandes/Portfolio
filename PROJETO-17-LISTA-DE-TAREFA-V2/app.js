@@ -1,8 +1,10 @@
 const express = require("express"); // Importa o módulo Express
 const bodyParser = require("body-parser"); // Importa o módulo body-parser
 const mongoose = require("mongoose"); // Importa o módulo mongoose
-const _ = require("lodash")
+const _ = require("lodash");
+require('dotenv').config();
 
+const dbHost = process.env.DB_HOST;
 const app = express(); // Cria uma nova instância do Express
 
 app.set('view engine', 'ejs'); // Define a engine de visualização como ejs
@@ -10,7 +12,7 @@ app.set('view engine', 'ejs'); // Define a engine de visualização como ejs
 app.use(bodyParser.urlencoded({ extended: true })); // Usa o body-parser para interpretar requisições de formulários
 app.use(express.static("public")); // Define a pasta "public" como pública para servir arquivos estáticos
 
-mongoose.connect("mongodb://127.0.0.1:27017/todolistDB", { useNewUrlParser: true }); // Conecta ao banco de dados MongoDB em localhost:27017/todolistDB, usando o driver padrão e configuração de URL.
+mongoose.connect(dbHost, { useNewUrlParser: true }); // Conecta ao banco de dados MongoDB em localhost:27017/todolistDB, usando o driver padrão e configuração de URL.
 
 const itemsSchema = { // Define o schema para os itens de uma lista de tarefas
   name: String
@@ -42,8 +44,11 @@ const List = mongoose.model("List", ListSchema); // Cria um modelo de Lista com 
 app.get("/", function (req, res) { // Define uma rota para a página inicial
 
   Item.find({}) // Busca todos os itens do banco de dados
-    .then((results) => { // Quando a busca estiver concluída
+
+    .then((results) => { // Quando a busca estiver concluídaconsole.log('Buscando os itens')
+      console.log('busca concluida obtemos: ' + results)
       if (results.length === 0) { // Se não houver itens no banco de dados
+        console.log('verificando se o ' + results + ' está no banco de dados');
         Item.insertMany(defaultItems) // Insere os itens padrão no banco de dados
           .then(() => {
             console.log("Successfully saved default items to DB.") // Quando a inserção estiver concluída, exibe uma mensagem no console
@@ -51,8 +56,10 @@ app.get("/", function (req, res) { // Define uma rota para a página inicial
           .catch((err) => {
             console.log(err) // Se houver erro na inserção, exibe o erro no console
           })
+        console.log('redirecionar a pagina neste momento para a pagina inicial /')
         res.redirect('/'); // Redireciona para a página inicial
       } else { // Se houver itens no banco de dados
+        console.log('Achamos o nome no banco de dados e vamo renderizar a pagina com o nome: ' + results)
         res.render("list", { listTitle: "Today", newListItems: results }); // Renderiza a página de listas de tarefas, passando a lista de itens encontrada como parâmetro
       }
     })
@@ -96,7 +103,7 @@ app.post("/", function (req, res) {
 
 // Define um endpoint para lidar com solicitações POST para "/delete"
 app.post("/delete", function (req, res) {
-  
+
   // Obtém o ID do item que deve ser excluído a partir dos dados enviados na solicitação
   const checkedItemId = req.body.checkbox;
 
@@ -113,7 +120,7 @@ app.post("/delete", function (req, res) {
       .catch((err) => {
         console.log(err);
       })
-  } 
+  }
   // Se o nome da lista não for "Today", encontra a lista correspondente usando o método findOne do modelo List e remove o item com o ID correspondente usando o operador $pull
   else {
     List.findOneAndUpdate({ name: listNameD }, { $pull: { items: { _id: checkedItemId } } })
@@ -129,48 +136,36 @@ app.post("/delete", function (req, res) {
 })
 
 
-// Define um endpoint para lidar com solicitações GET para "/:customListName"
-app.get("/:customListName", function (req, res) {
-  
-  // Obtém o nome personalizado da lista a partir dos parâmetros enviados na solicitação
-  const customListName = _.capitalize(req.params.customListName);
+app.get('/:customListName', async function (req, res) {
+  const customListName = _.capitalize(req.params.customListName);  // Transforma o valor do parâmetro customListName em uma string com a primeira letra maiúscula usando a função capitalize() do pacote lodash.
 
-  // Procura no banco de dados uma lista com o nome personalizado especificado
-  List.findOne({ name: customListName })
-  
-    // Se a lista for encontrada, renderiza a página da lista com o título da lista e os itens correspondentes
-    .then((FindName) => {
-      if (FindName) {
-        res.render("list", { listTitle: FindName.name, newListItems: FindName.items })
-      } 
-      
-      // Se a lista não for encontrada, cria uma nova lista com o nome e os itens padrão e redireciona o usuário para a página da nova lista
-      else {
-        const list = new List({
-          name: customListName,
-          items: defaultItems
-        });
-        list.save();
-        res.redirect('/' + customListName);
-      }
-    })
-    
-    // Se ocorrer um erro, exibe uma mensagem de erro no console
-    .catch((err) => {
-      console.log(err)
-    })
+  try {
+    const foundList = await List.findOne({ name: customListName });  // Busca uma lista com o nome customListName no banco de dados usando o método findOne() do modelo List, usando a sintaxe do ES8 async/await.
+    if (!foundList) {  // Se a lista não for encontrada no banco de dados, executa o bloco de código dentro deste if.
+      const list = new List({  // Cria um novo objeto List com o nome customListName e uma lista de itens padrão defaultItems.
+        name: customListName,
+        items: defaultItems
+      });
+      await list.save();  // Salva o novo objeto List no banco de dados, usando a sintaxe do ES8 async/await.
+      res.redirect('/' + customListName);  // Redireciona o usuário para a página correspondente à lista personalizada recém-criada.
+    } else {  // Se a lista for encontrada no banco de dados, executa o bloco de código dentro deste else.
+      res.render('list', { listTitle: foundList.name, newListItems: foundList.items });  // Renderiza a página 'list' com os dados da lista encontrada no banco de dados.
+    }
+  } catch (err) {
+    console.log(err);  // Define uma função de callback que será chamada se ocorrer um erro durante a busca no banco de dados, registrando o erro no console.
+  }
 });
 
 // Define um endpoint para lidar com solicitações GET para "/about"
 app.get("/about", function (req, res) {
-  
+
   // Renderiza a página "about"
   res.render("about");
 });
 
 // Inicia o servidor na porta 3000
 app.listen(3000, function () {
-  
+
   // Registra uma mensagem de confirmação no console
   console.log("Server started on port 3000");
 });

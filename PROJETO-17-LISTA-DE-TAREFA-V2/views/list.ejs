@@ -8,6 +8,10 @@
 
   <div class="box">
 
+
+
+
+
     <% newListItems.forEach(function(result){ %>
 
       <form action="/delete" method="post">
@@ -18,7 +22,7 @@
           </p>
         </div>
         <% }) %>
-          <input type="hidden" name="listNameD" value="<%= listTitle %>">
+          <input type="hidden" name="listName" value="<%= listTitle %>">
       </form>
 
       <form class="item" action="/" method="post">
