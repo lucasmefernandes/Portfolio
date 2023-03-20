@@ -46,9 +46,7 @@ app.get("/", function (req, res) { // Define uma rota para a página inicial
   Item.find({}) // Busca todos os itens do banco de dados
 
     .then((results) => { // Quando a busca estiver concluídaconsole.log('Buscando os itens')
-      console.log('busca concluida obtemos: ' + results)
       if (results.length === 0) { // Se não houver itens no banco de dados
-        console.log('verificando se o ' + results + ' está no banco de dados');
         Item.insertMany(defaultItems) // Insere os itens padrão no banco de dados
           .then(() => {
             console.log("Successfully saved default items to DB.") // Quando a inserção estiver concluída, exibe uma mensagem no console
@@ -56,10 +54,8 @@ app.get("/", function (req, res) { // Define uma rota para a página inicial
           .catch((err) => {
             console.log(err) // Se houver erro na inserção, exibe o erro no console
           })
-        console.log('redirecionar a pagina neste momento para a pagina inicial /')
         res.redirect('/'); // Redireciona para a página inicial
       } else { // Se houver itens no banco de dados
-        console.log('Achamos o nome no banco de dados e vamo renderizar a pagina com o nome: ' + results)
         res.render("list", { listTitle: "Today", newListItems: results }); // Renderiza a página de listas de tarefas, passando a lista de itens encontrada como parâmetro
       }
     })
