@@ -4,7 +4,7 @@ const _ = require('lodash');
 const ejs = require("ejs");
 const mongoose = require('mongoose');
 const app = express();
-
+require('dotenv').config()
 
 app.set('view-engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -65,6 +65,7 @@ app.post("/compose", function (req, res) {
   res.redirect("/");
 });
 
-app.listen(3000, function () {
-  console.log("Server started on port 3000");
+const port = process.env.PORT || 8080;
+app.listen(port, function () {
+  console.log("Server started on port" + port);
 });
