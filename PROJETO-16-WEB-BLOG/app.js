@@ -5,11 +5,12 @@ const ejs = require("ejs");
 const mongoose = require('mongoose');
 const app = express();
 require('dotenv').config()
+const dbHost = process.env.HOST_DB;
 
 app.set('view-engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
-mongoose.connect("mongodb://127.0.0.1:27017"), { useNewUrlParser: true };
+mongoose.connect(dbHost), { useNewUrlParser: true };
 
 const modelTextSchema = {
   title: String,
