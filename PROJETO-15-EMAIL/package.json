@@ -4,7 +4,8 @@
   "description": "Criação de um E-mail Marketing",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "script.js"
   },
   "author": "Lucas Messias",
   "license": "ISC",
