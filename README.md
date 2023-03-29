@@ -59,6 +59,14 @@ Basta clicar no Link para visualizar o projeto! (Sites hospedados atráves do Gi
     Executar o PROJETO-14-JOGO-SIMON
 </a>
 <br>
-<a href="https://tranquil-plateau-62629.herokuapp.com" target="_blank">
+<a href="https://email-marketing.onrender.com" target="_blank">
     Executar o PROJETO-15-E-MAIL-MARKETING
+</a>
+<br>
+<a href="https://web-blog-5svy.onrender.com" target="_blank">
+    Executar o PROJETO-16-WEB-BLOG
+</a>
+<br>
+<a href="https://todolist-v2-zedr.onrender.com" target="_blank">
+    Executar o PROJETO-18-LISTA-DE-TAREFA-V2
 </a>
