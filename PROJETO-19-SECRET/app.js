@@ -9,7 +9,8 @@ const passport = require("passport")
 const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const FacebookStrategy = require('passport-facebook').Strategy;
-const findOrCreate = require('mongoose-findorcreate')
+const findOrCreate = require('mongoose-findorcreate');
+const dbHost = process.env.HOST_DB;
 //const bcrypt = require("bcrypt");
 //const saltRounds = 10;
 //const encrypt = require("mongoose-encryption");
@@ -32,7 +33,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb://127.0.0.1:27017/userDB"), { useNewUrlParser: true };
+mongoose.connect(dbHost, { useNewUrlParser: true });
 //mongoose.set("useCreateIndex", true);
 
 const userSchema = new mongoose.Schema({
@@ -280,7 +281,5 @@ app.post("/login", (req, res) => {
         })*/
 });
 
-app.listen(3000, () => {
-    console.log("Coneection sucessfully on PORT 3000")
-})
-
+const port = process.env.PORT || 8080;
+app.listen(port, function () {});
