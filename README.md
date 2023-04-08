@@ -31,7 +31,7 @@ Basta clicar no Link para visualizar o projeto! (Sites hospedados atráves do Gi
     Executar o PROJETO-07-CORDEL-SITE
 </a>
 <br>
-<a href="https://lukones.github.io/Portfolio/PROJETO-08-NETFLIX/index.html" target="_blank">
+<a href="https://lukones.github.io/Portfolio/PROJETO-08-NETFLIX/indexJS.html" target="_blank">
     Executar o PROJETO-08-NETFLIX
 </a>
 <br>
