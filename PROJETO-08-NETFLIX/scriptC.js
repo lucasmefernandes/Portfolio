@@ -43,7 +43,7 @@ function limparfilmes() {
 }
 
 async function buscarFilmes(title) {
-    const url = `https://api.themoviedb.org/3/movie/550?api_key=${keyApi}&query=${title}&language=en-US&page=1`
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=${keyApi}&query=${title}&language=en-US&page=1`
     const respostaFetch = await fetch(url)
     const { results } = await respostaFetch.json()
     return results
