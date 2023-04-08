@@ -104,9 +104,10 @@ app.get("/", (req, res) => {
 
 app.get('/auth/google', passport.authenticate('google', { scope: ['profile'] }));
 
-app.get('/auth/google/secrets',
-    passport.authenticate('google', { failureRedirect: '/login' }),
+app.get('/auth/google/secrets', passport.authenticate('google', { failureRedirect: '/login' }),
+
     function (req, res) {
+        console.log(req)
         // Successful authentication, redirect home.
         res.redirect('/secrets');
     });
@@ -142,14 +143,13 @@ app.get("/secrets", async (req, res) => {
 
         // Se não houver documentos encontrados, retorna um status 404 e uma mensagem
         if (!foundUsers) {
-            console.log(foundUsers);
             res.status(404).send("Documento não encontrado");
-        } else { 
+        } else {
             // Caso contrário, cria uma array de segredos dos usuários encontrados e passa para a view 'secrets.ejs'
             const secrets = foundUsers.map(user => user.secretArray).flat();
             // Caso contrário, renderiza a view 'secrets.ejs', passando os usuários com segredos encontrados na busca
             if (foundUsers) {
-                res.render("secrets.ejs", { usersWithSecrets:  secrets});
+                res.render("secrets.ejs", { usersWithSecrets: secrets });
             }
         }
     } catch (err) {
@@ -176,13 +176,11 @@ app.get("/submit", (req, res) => {
 
 app.post("/submit", (req, res) => {
     const submittedSecret = req.body.secret;
-    console.log(req.user._id);
 
     User.findById(req.user._id)
         .then((result) => {
             if (!result) {
                 // documento não encontrado, tratar como erro
-                console.log("Documento não encontrado com _id =", req.user_id);
                 res.status(404).send("Documento não encontrado");
             } else {
                 // documento encontrado, atualizar a propriedade 'secret'
@@ -281,5 +279,28 @@ app.post("/login", (req, res) => {
         })*/
 });
 
+app.get('/delete', (req, res) => {
+    if (req.isAuthenticated()) {
+        res.render("delete.ejs");
+    } else {
+        res.redirect("/login");
+    }
+});
+
+app.post('/delete', (req, res) => {
+
+    User.deleteOne({ "_id": req.user._id })
+        .then((result) => {
+            if (!result) {
+                // documento não encontrado, tratar como erro
+                res.status(404).send("Documento não encontrado");
+            } else {
+                // documento encontrado, volta para o inicio'
+                res.redirect("/login")
+            }
+        })
+
+});
+
 const port = process.env.PORT || 8080;
-app.listen(port, function () {});
+app.listen(port, function () { });
