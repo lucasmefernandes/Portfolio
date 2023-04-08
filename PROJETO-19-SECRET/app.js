@@ -125,6 +125,10 @@ app.get("/login", (req, res) => {
     res.render("login.ejs");
 });
 
+app.get("/privacity", (req, res) => {
+    res.render("privacity.ejs");
+});
+
 app.get("/logout", (req, res) => {
     req.logout((err) => {
         console.log(err);
