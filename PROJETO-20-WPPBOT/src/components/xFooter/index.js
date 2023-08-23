@@ -16,6 +16,10 @@ const DivHeader = styled.div`
         color: #fff;
         text-decoration: none;
     }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+        height: 30px;
+    }
     
 }
 `

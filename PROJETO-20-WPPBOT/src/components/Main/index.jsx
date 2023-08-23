@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import ButtonEnd from './Defaults/ButtonEnd'
+import MensegerFix from './Defaults/MensageFixedTop';
 import BoxInput from "./Defaults/BoxInput"
 import Part01 from './Part01/index';
 import Part02 from './Part02/Index';
@@ -26,12 +27,31 @@ const ChatBox = styled.div`
     &::-webkit-scrollbar {
         width: 0px;
     }
+
+    @media (min-width: 350px) and (max-width: 768px) {
+        bottom: 55px;
+        width: 700px;
+        height: 600px;
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+        bottom: 55px;
+        width: 700px;
+        height: 600px;
+    }
+
+    
 `
 
 const BoxFixedAuto = styled.div`
     width: 100%;
     display: flex;
     justify-content: flex-end;
+
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
 `
 
 const Button = styled.button`
@@ -42,44 +62,31 @@ const Button = styled.button`
     background: none;  
 `
 
-const ButtonNewEnd = styled(Button)`
-    left: 0px;
-    width: 100%;
-    height: 300px;
-    display: flex;
-    justify-content: flex-end;
-
-    a {
-        color: #fff;
-        text-decoration: none;
-    }
-`
-
 function Main() {
     const [nameUsuario, setNomeUsuario] = useState('');
     const [ageUser, setAgeUser] = useState('')
     const [weightUser, setWeightUserUser] = useState('')
     const [elementosVisiveis, setElementosVisiveis] = useState({
-        Part03: false,
-        Part04: false,
-        Part05: false,
-        Part06: false,
-        Part07: false,
-        Part08: false,
-        Part09: false,
-        Part10: false,
-        Part11: false,
-        Part12: false
+        Part03: true,
+        Part04: true,
+        Part05: true,
+        Part06: true,
+        Part07: true,
+        Part08: true,
+        Part09: true,
+        Part10: true,
+        Part11: true,
+        Part12: true
     });
     const [buttonOff, setButtonOff] = useState({
-        Btn1: false,
-        Btn2: false,
-        Btn3: false,
-        Btn4: false,
-        Btn5: false,
-        Btn6: false,
-        Btn7: false,
-        Btn8: false,
+        Btn1: true,
+        Btn2: true,
+        Btn3: true,
+        Btn4: true,
+        Btn5: true,
+        Btn6: true,
+        Btn7: true,
+        Btn8: true,
     });
 
 
@@ -103,7 +110,7 @@ function Main() {
         toggleVisibilidade('Part05')
     };
 
-    const [isBoxInputActive, setIsBoxInputActive] = useState([false, false, false, false, false, false, false, false, false, false, false,]);
+    const [isBoxInputActive, setIsBoxInputActive] = useState([true, true, true, true, true, true, true, true, true, true, true,]);
 
     const activateBoxInput = (n) => {
         setIsBoxInputActive(prevState => {
@@ -134,11 +141,10 @@ function Main() {
 
     const link = 'https://pay.hotmart.com/E76959711Y?off=krqi4sbu&checkoutMode=10&bid=1692740611137'
 
-
-
     return (
         <>
             <ChatBox ref={chatBoxRef}>
+                <MensegerFix text="Ésta es una cuenta comercial y no recibimos llamadas " status={true} />
 
                 <BoxFixedAuto>
                     <Part01 activateBoxInput={activateBoxInput} onNewMessage={adicionarMensagem} />
@@ -154,19 +160,18 @@ function Main() {
                     <Part03 status={elementosVisiveis.Part03} activateBoxInput={activateBoxInput} onNewMessage={adicionarMensagem} />
                 </BoxFixedAuto>
 
-                <BoxInput onSubmit={handleNameSubmit} place='Introduzca sólo el nombre.' status={isBoxInputActive[1]} />
-
+                <BoxInput onSubmit={handleNameSubmit} place='Introduzca sólo el nombre.' status={isBoxInputActive[1]} req='text' />
                 <BoxFixedAuto>
                     <Part04 name={nameUsuario} status={elementosVisiveis.Part04} activateBoxInput={activateBoxInput} onNewMessage={adicionarMensagem} />
                 </BoxFixedAuto>
 
-                <BoxInput onSubmit={handleWeightSubmit} place='Introduzca sólo números' status={isBoxInputActive[2]} />
+                <BoxInput onSubmit={handleWeightSubmit} place='Introduzca sólo números' status={isBoxInputActive[2]} req='Number' />
 
                 <BoxFixedAuto>
                     <Part05 status={elementosVisiveis.Part05} activateBoxInput={activateBoxInput} onNewMessage={adicionarMensagem} />
                 </BoxFixedAuto>
 
-                <BoxInput onSubmit={handleAgeSubmit} place='Introduzca su edad ' status={isBoxInputActive[3]} />
+                <BoxInput onSubmit={handleAgeSubmit} place='Introduzca su edad ' status={isBoxInputActive[3]} req='Number2' />
 
                 <BoxFixedAuto>
                     <Part06 age={ageUser} name={nameUsuario} weight={weightUser} status={elementosVisiveis.Part06} activateBoxInput={activateBoxInput} onNewMessage={adicionarMensagem} />
@@ -231,16 +236,16 @@ function Main() {
                         onClick={() => toggleVisibilidade('Part12', 'Btn7')} disabled={buttonOff.Btn7} >
                         <Part02 text='¡Sí, me encantaría!' status={isBoxInputActive[9]} />
                     </Button>
-                </BoxFixedAuto>
+                </BoxFixedAuto> 
                 <BoxFixedAuto>
                     <Part12 name={nameUsuario} status={elementosVisiveis.Part12} activateBoxInput={activateBoxInput} onNewMessage={adicionarMensagem} />
                 </BoxFixedAuto>
 
-                <ButtonNewEnd onClick={() => toggleVisibilidade('Part13', 'Btn8')} style={{ display: isBoxInputActive[10] ? 'flex' : 'none' }}>
+                <BoxFixedAuto onClick={() => toggleVisibilidade('Part13', 'Btn8')} style={{ display: isBoxInputActive[10] ? 'flex' : 'none' }}>
                     <a href={link}>
-                        <ButtonEnd text='Regístrate' text2='Haga clic en regístrate para completar su registro' status={isBoxInputActive[10]} />
+                        <ButtonEnd text='Regístrate' text2='Haga clic en regístrate para completar su registro' status={true} />
                     </a>
-                </ButtonNewEnd>
+                </BoxFixedAuto> 
 
             </ChatBox>
         </>

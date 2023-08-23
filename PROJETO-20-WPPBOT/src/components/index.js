@@ -7,7 +7,7 @@ import Footer from "./xFooter";
 const MainCentralize = styled.div`
     position: relative;
     width: 100%;
-    height: 91vh; 
+    height: 90.8vh; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,6 +25,10 @@ const MainCentralize = styled.div`
         background: url(${wallpaper});
         opacity: 0.06;
     }
+
+    @media (min-width: 0px) and (max-width: 1024px) {
+      height: 90vh; 
+  }
 `;
 
 function Home() {
@@ -32,6 +36,7 @@ function Home() {
   return (
     <>
       <Header />
+      
       <MainCentralize>
         <Main />
       </MainCentralize>

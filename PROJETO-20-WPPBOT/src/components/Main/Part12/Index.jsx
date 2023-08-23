@@ -99,15 +99,15 @@ function Part12(props) {
             }, 105000);
 
             const timer1 = setTimeout(() => {
-                setName('Digitando');
+                setName('Escribiendo');
             }, 0);
 
             const timer2 = setTimeout(() => {
-                setName('Gravando');
+                setName('Grabando audio');
             }, 3000);
 
             const timer3 = setTimeout(() => {
-                setName('Online')
+                setName("En línea")
             }, 105000);
 
             return () => {

@@ -55,15 +55,15 @@ function Part03(props) {
             }, 4500);
 
             const timer1 = setTimeout(() => {
-                setName('Gravando');
+                setName('Grabando audio');
             }, 0);
 
             const timer2 = setTimeout(() => {
-                setName('Digitando');
+                setName('Escribiendo');
             }, 3700);
 
             const timer3 = setTimeout(() => {
-                setName('Online');
+                setName("En línea");
             }, 4500);
 
             return () => {

@@ -3,6 +3,7 @@ import { useName } from '../../../context/NameContext';
 import styled, { keyframes } from 'styled-components';
 import Preload from "../Defaults/Preloand";
 
+import VideoPlay from "../Defaults/VideoPlay"
 import MensagemAuto from "../Defaults/MensageDefault";
 import Photofixed from "../Defaults/PhotoFixed";
 import MensagemAudioAuto from "../Defaults/MensageDesafultAudio";
@@ -77,23 +78,23 @@ function Part11(props) {
             }, 20000);
 
             const timer1 = setTimeout(() => {
-                setName('Digitando');
+                setName('Escribiendo');
             }, 0);
 
             const timer2 = setTimeout(() => {
-                setName('Gravando');
+                setName('Grabando audio');
             }, 1900);
 
             const timer3 = setTimeout(() => {
-                setName('Gravando')
+                setName('Grabando audio')
             }, 10590);
 
             const timer4 = setTimeout(() => {
-                setName('Digitando');
+                setName('Escribiendo');
             }, 18000);
 
             const timer5 = setTimeout(() => {
-                setName('Online');
+                setName("En línea");
             }, 20100);
 
             return () => {
@@ -136,7 +137,7 @@ function Part11(props) {
                 {showPreload3[0] && <MensagemAuto textOne={<Preload />} />}
                 {showPreload3[1] && (
                     <ExpandAnimation>
-                        <MensagemAuto textOne={false} textTwo={false} space={false} img={<video width='512px' height='400px' controls><source src={Depoimento3} type="video/mp4" /></video>} />
+                        <MensagemAuto textOne={false} textTwo={false} space={false} img={<VideoPlay src={Depoimento3} type="video/mp4"/>} />
                     </ExpandAnimation>
                 )}
                 {showPreload4[2] && <></>}
@@ -150,7 +151,7 @@ function Part11(props) {
                 {showPreload5[0] && <MensagemAuto textOne={<Preload />} />}
                 {showPreload5[1] && (
                     <ExpandAnimation>
-                        <MensagemAuto textOne={'Hola, ' + props.name} textTwo={"¿Te gustaría inscribirte en el reto de 21 días?"} space={true} img={false} />
+                        <MensagemAuto textOne={'Hola, ' + props.name} textTwo={"¿Te gustaría inscribirte en el desafío de 21 días?"} space={true} img={false} />
                     </ExpandAnimation>
                 )}
             </Boxtest2>

@@ -52,24 +52,18 @@ const DivBoxResult = styled.div`
 const ButtonClient = styled.button`
     background: rgba(0, 138, 134, 1);
     border-radius: 50%;
-    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 50px;
     height: 50px;
     border: none;
-    color: transparent;
-    bottom: 12px;
-    left: 665px;
+    color: transparent;    
     cursor: pointer;
 
 
     &::before {
         content: "";
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
         width: 25px;
         height: 25px;
         background-repeat: no-repeat;
@@ -88,9 +82,9 @@ const Input = styled.input`
     outline: none;
 
     &::placeholder {
-        color: #888; 
+        color: ${props => props.error ? '#ff0000' : '#888'}; 
+        font-size: ${props => props.error ? '16px' : 'none'};
     }
-
 `;
 
 const DivResult = styled.div`
@@ -114,43 +108,98 @@ const ButtonClientResult = styled.button`
     font-size: 16px;
 `
 
+const Form = styled.form`
+    display: flex;
+    border-radius: 50px;
+    background: #fff;
+`
+
+const ErrorMessage = styled.div`
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+`;
+
 function BoxClient(props) {
 
     const [inputValue, setInputValue] = useState('')
     const [click, setClick] = useState(false)
+    const [error, setError] = useState(false);
+    const [placeholder, setPlaceholder] = useState(props.place)
 
-    function handleSubmit() {
-        props.onSubmit(inputValue);
-        setClick(true);
+    function handleSubmit(e) {
+        e.preventDefault();
+
+        let isNumbers = Number(inputValue)
+        
+        if (props.req === 'Number' || props.req === 'Number2') {
+            if (isNaN(isNumbers) || isNumbers <= 40) {
+                setPlaceholder("La entrada debe ser un número mayor que 40.")
+                setInputValue("");
+                return setError(true);
+            }
+        }
+        
+        if (props.req === 'text' && !/^[A-Za-z]+$/.test(inputValue)) {
+            setPlaceholder('La entrada debe ser un texto.')
+            setInputValue("")
+            return setError(true);
+        } else {
+          setError(false);
+          props.onSubmit(inputValue);
+          setClick(true);
+        }
+
     }
 
     if (props.status === true) {
-
-
         return (
             <BoxFixedAuto>
                 <BoxtestClient>
                     <MessageClient>
-                        {click ?
+                        {click ? (
                             <DivBoxResult>
                                 <DivResult>
                                     <ButtonClientResult>{inputValue}</ButtonClientResult>
-                                    <Svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 100 100" className="sc-kDnyCx dwrxBe"><polygon points="0,0 100,0 100,100" fill="#D9FDD2" transform="rotate(270 50 50)"></polygon></Svg>
+                                    <Svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="20"
+                                        height="20"
+                                        viewBox="0 0 100 100"
+                                        className="sc-kDnyCx dwrxBe"
+                                    >
+                                        <polygon
+                                            points="0,0 100,0 100,100"
+                                            fill="#D9FDD2"
+                                            transform="rotate(270 50 50)"
+                                        ></polygon>
+                                    </Svg>
                                 </DivResult>
                             </DivBoxResult>
-                            :
+                        ) : (
                             <DivBox>
-                                <Input type='text' placeholder={props.place} value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
-                                <ButtonClient onClick={handleSubmit} />
+                                <Form onSubmit={handleSubmit}>
+                                    <Input
+                                        type="text"
+                                        placeholder={placeholder}
+                                        value={inputValue}
+                                        onChange={(e) => setInputValue(e.target.value)}
+                                        req={props.req}
+                                        error={error ? 'true' : 'false'}
+                                    />
+                                    <ButtonClient onClick={handleSubmit} />
+                                </Form>
+                                {error && (
+                                    <ErrorMessage>{error}</ErrorMessage>
+                                )}
                             </DivBox>
-
-                        }
+                        )}
                     </MessageClient>
                 </BoxtestClient>
             </BoxFixedAuto>
-        )
+        );
     } else {
-        return <></>
+        return <></>;
     }
 }
 

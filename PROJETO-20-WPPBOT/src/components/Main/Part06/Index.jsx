@@ -62,11 +62,11 @@ function Part06(props) {
             }, 4000);
 
             const timer1 = setTimeout(() => {
-                setName('Digitando');
+                setName('Escribiendo');
             }, 0);
 
             const timer2 = setTimeout(() => {
-                setName('Online');
+                setName("En línea");
             }, 4000);
 
             return () => {

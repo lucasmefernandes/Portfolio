@@ -91,19 +91,19 @@ function Part01(props) {
       }, 24000);
 
       const timer1 = setTimeout(() => {
-        setName('Digitando');
+        setName('Escribiendo');
       }, 0);
 
       const timer2 = setTimeout(() => {
-        setName('Gravando');
+        setName('Grabando audio');
       }, 10000);
 
       const timer3 = setTimeout(() => {
-        setName('Digitando');
+        setName('Escribiendo');
       }, 21000);
 
       const timer4 = setTimeout(() => {
-        setName('Online');
+        setName("En línea");
       }, 24000);
 
       return () => {

@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const BoxFixedAuto = styled.div`
     width: 100%;
     height: 100%;
+    border-radius: 50%;
     display: flex;
 `
 
@@ -19,15 +20,16 @@ const MessageClient = styled.div`
   justify-content: flex-end;
   position: relative;
   width: 100%;
+  right: 0px;
   margin: 5px 0;
 `
 
 const Svg = styled.svg`
-    width: 100px;
+    width: 75px;
     position: relative;
     background: initial;
-    right: -15px;
     padding: 20px;
+    left: 9px;
     color: #fff;
 `
 
@@ -37,22 +39,23 @@ const DivBox = styled.div`
     background: #128c7e;
     border-radius: 10px;
     cursor: pointer;
-    padding: 20px;
+    padding: 0px 0px 15px 0;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     
     &:hover {
-        background: #107E71};
+        background: #107E71;
     }
 
 `
 
 const ButtonClient = styled.div`
-    width: 300px;
+    width: 200px;
     border: none;
     color: #fff;
+    border-radius: 10px;
     background: initial;
     font-size: 16px;
     cursor: pointer;
@@ -64,7 +67,7 @@ const ButtonClient = styled.div`
     padding: 10px;
 
     &:hover {
-        background: #107E71};
+        background: #107E71;
     }
 `
 

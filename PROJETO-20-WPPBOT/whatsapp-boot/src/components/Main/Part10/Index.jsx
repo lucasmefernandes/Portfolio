@@ -79,23 +79,23 @@ function Part10(props) {
             }, 20000);
 
             const timer1 = setTimeout(() => {
-                setName('Gravando');
+                setName('Grabando audio');
             }, 0);
 
             const timer2 = setTimeout(() => {
-                setName('Digitando');
+                setName('Escribiendo');
             }, 5900);
 
             const timer3 = setTimeout(() => {
-                setName('Gravando')
+                setName('Grabando audio')
             }, 11900);
 
             const timer4 = setTimeout(() => {
-                setName('Digitando');
+                setName('Escribiendo');
             }, 17900);
 
             const timer5 = setTimeout(() => {
-                setName('Online');
+                setName("En línea");
             }, 20100);
 
             return () => {
@@ -132,7 +132,7 @@ function Part10(props) {
                 {showPreload2[0] && <MensagemAuto textOne={<Preload />} />}
                 {showPreload2[1] && (
                     <ExpandAnimation>
-                        <MensagemAuto textOne={'Los beneficios de participar en el reto en 21 días son estos...'} textTwo={false} space={false} img={false} />
+                        <MensagemAuto textOne={'Los beneficios de participar en el desafío en 21 días son estos...'} textTwo={false} space={false} img={false} />
                     </ExpandAnimation>
                 )}
                 {showPreload3[2] && <></>}

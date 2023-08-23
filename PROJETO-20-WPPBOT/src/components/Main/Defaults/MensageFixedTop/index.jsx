@@ -4,9 +4,11 @@ import styled from 'styled-components';
 const DivMensegerFix = styled.div`
     display: flex;
     justify-content: center;
+    align-items: center;
     margin: 0 0 16px 0;
 
     & p {
+        width: 60%;
         background-color: #d5f4f0;
         border-radius: 10px;
         padding: 10px;
@@ -15,6 +17,7 @@ const DivMensegerFix = styled.div`
         align-items: center;
         font-size: 14px;
         color: #53676b;
+        text-align: center;
 
 
         & svg {

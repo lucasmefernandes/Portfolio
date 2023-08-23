@@ -6,12 +6,16 @@ import MensagemAudioAuto from "../Defaults/MensageDesafultAudio";
 import news from "../../../img/news.jpg"
 import Preload from "../Defaults/Preloand";
 import { useName } from '../../../context/NameContext';
-import MensegerFix from '../Defaults/MensageFixedTop';
+
 
 const Boxtest2 = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
+`
+
+const Image = styled.img`
+  width: 512px;
 `
 
 const openAnimation = keyframes`
@@ -40,7 +44,7 @@ function Part01(props) {
 
   useEffect(() => {
     const timer1 = setTimeout(() => {
-      setName('Digitando');
+      setName('Escribiendo');
     }, 0);
 
     return () => clearTimeout(timer1);
@@ -48,7 +52,7 @@ function Part01(props) {
 
   useEffect(() => {
     const timer2 = setTimeout(() => {
-      setName('Gravando');
+      setName('Grabando audio');
     }, 10000);
 
     return () => clearTimeout(timer2);
@@ -56,7 +60,7 @@ function Part01(props) {
 
   useEffect(() => {
     const timer3 = setTimeout(() => {
-      setName('Digitando');
+      setName('Escribiendo');
     }, 21000);
 
     return () => clearTimeout(timer3);
@@ -64,7 +68,7 @@ function Part01(props) {
 
   useEffect(() => {
     const timer4 = setTimeout(() => {
-      setName('Online');
+      setName("En línea");
     }, 24000);
 
     return () => clearTimeout(timer4);
@@ -145,7 +149,6 @@ function Part01(props) {
     <>
       <Photofixed />
       <Boxtest2>
-        <MensegerFix text="Ésta es una cuenta comercial y no recibimos llamadas " status={true} />
         {showPreload1[0] && <MensagemAuto textOne={<Preload />} />}
         {showPreload1[1] && (
 
@@ -179,7 +182,7 @@ function Part01(props) {
         {showPreload5[0] && <MensagemAuto textOne={<Preload />} />}
         {showPreload5[1] && (<ExpandAnimation>
 
-          <MensagemAuto textOne={false} textTwo={false} space={false} img={<img width='512px' src={news} alt='Icon-News' />} />
+          <MensagemAuto textOne={false} textTwo={false} space={false} img={<img width='85%' src={news} alt='Icon-News' />} />
 
         </ExpandAnimation>)
         }

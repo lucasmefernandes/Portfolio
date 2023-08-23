@@ -91,19 +91,19 @@ function Part09(props) {
             }, 56000);
 
             const timer1 = setTimeout(() => {
-                setName('Digitando');
+                setName('Escribiendo');
             }, 0);
 
             const timer2 = setTimeout(() => {
-                setName('Gravando');
+                setName('Grabando audio');
             }, 2000);
 
             const timer3 = setTimeout(() => {
-                setName('Digitando')
+                setName('Escribiendo')
             }, 53900);
 
             const timer4 = setTimeout(() => {
-                setName('Online');
+                setName("En línea");
             }, 56100);
 
             return () => {
@@ -176,7 +176,7 @@ function Part09(props) {
                 {showPreload7[0] && <MensagemAuto textOne={<Preload />} />}
                 {showPreload7[1] && (
                     <ExpandAnimation>
-                        <MensagemAuto textOne={props.name + ', ¿te gustaría saber más sobre el reto de 21 días?' } textTwo={false} space={false} img={false} />
+                        <MensagemAuto textOne={props.name + ', ¿te gustaría saber más sobre el desafío de 21 días?' } textTwo={false} space={false} img={false} />
                     </ExpandAnimation>
                 )}
             </Boxtest2>
