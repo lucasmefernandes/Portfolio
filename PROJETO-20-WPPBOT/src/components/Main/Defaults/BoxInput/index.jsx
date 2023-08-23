@@ -82,8 +82,8 @@ const Input = styled.input`
     outline: none;
 
     &::placeholder {
-        color: ${props => props.error ? '#ff0000' : '#888'}; 
-        font-size: ${props => props.error ? '16px' : 'none'};
+        color: ${props => props.error === 'true' ? '#ff0000' : '#888'}; 
+        font-size: ${props => props.error === 'true' ? '16px' : 'none'};
     }
 `;
 

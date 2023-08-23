@@ -67,26 +67,26 @@ function Main() {
     const [ageUser, setAgeUser] = useState('')
     const [weightUser, setWeightUserUser] = useState('')
     const [elementosVisiveis, setElementosVisiveis] = useState({
-        Part03: true,
-        Part04: true,
-        Part05: true,
-        Part06: true,
-        Part07: true,
-        Part08: true,
-        Part09: true,
-        Part10: true,
-        Part11: true,
-        Part12: true
+        Part03: false,
+        Part04: false,
+        Part05: false,
+        Part06: false,
+        Part07: false,
+        Part08: false,
+        Part09: false,
+        Part10: false,
+        Part11: false,
+        Part12: false
     });
     const [buttonOff, setButtonOff] = useState({
-        Btn1: true,
-        Btn2: true,
-        Btn3: true,
-        Btn4: true,
-        Btn5: true,
-        Btn6: true,
-        Btn7: true,
-        Btn8: true,
+        Btn1: false,
+        Btn2: false,
+        Btn3: false,
+        Btn4: false,
+        Btn5: false,
+        Btn6: false,
+        Btn7: false,
+        Btn8: false,
     });
 
 
@@ -110,7 +110,7 @@ function Main() {
         toggleVisibilidade('Part05')
     };
 
-    const [isBoxInputActive, setIsBoxInputActive] = useState([true, true, true, true, true, true, true, true, true, true, true,]);
+    const [isBoxInputActive, setIsBoxInputActive] = useState([false, false, false, false, false, false, false, false, false, false, false,]);
 
     const activateBoxInput = (n) => {
         setIsBoxInputActive(prevState => {
