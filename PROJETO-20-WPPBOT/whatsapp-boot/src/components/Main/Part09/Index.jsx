@@ -35,12 +35,14 @@ function Part09(props) {
     const [showPreload5, setShowPreload5] = useState([false, false, true]);
     const [showPreload6, setShowPreload6] = useState([false, false, true]);
     const [showPreload7, setShowPreload7] = useState([false, false, true]);
-    const notifyNewMessage = () => {
-        props.onNewMessage();
-      };
-    
+
+
 
     useEffect(() => {
+        const notifyNewMessage = () => {
+            props.onNewMessage();
+        };
+
         if (props.status === true) {
 
             const preloadTimer1 = setTimeout(() => {
@@ -121,9 +123,10 @@ function Part09(props) {
                 clearTimeout(timer4);
             };
         }
-    }, [props.status]);
-    
-    
+        // eslint-disable-next-line
+    }, [notifyNewMessage, props, setName]);
+
+
     return (
 
         <>
@@ -133,55 +136,55 @@ function Part09(props) {
                 {showPreload1[0] && <MensagemAuto textOne={<Preload />} />}
                 {showPreload1[1] && (
                     <ExpandAnimation>
-                        <MensagemAuto textOne={props.name + ', te explico cómo funciona el programa de perdida de peso...' } textTwo={false} space={false} img={false} />
+                        <MensagemAuto textOne={props.name + ', te explico cómo funciona el programa de perdida de peso...'} textTwo={false} space={false} img={false} />
                     </ExpandAnimation>
                 )}
                 {showPreload2[2] && <></>}
                 {showPreload2[0] && <MensagemAuto textOne={<Preload />} />}
                 {showPreload2[1] && (
                     <ExpandAnimation>
-                        <MensagemAudioAuto audio='10'/>
+                        <MensagemAudioAuto audio='10' />
                     </ExpandAnimation>
                 )}
                 {showPreload3[2] && <></>}
                 {showPreload3[0] && <MensagemAuto textOne={<Preload />} />}
                 {showPreload3[1] && (
                     <ExpandAnimation>
-                        <MensagemAudioAuto audio='11'/>
+                        <MensagemAudioAuto audio='11' />
                     </ExpandAnimation>
                 )}
                 {showPreload4[2] && <></>}
                 {showPreload4[0] && <MensagemAuto textOne={<Preload />} />}
                 {showPreload4[1] && (
                     <ExpandAnimation>
-                        <MensagemAudioAuto audio='12'/>
+                        <MensagemAudioAuto audio='12' />
                     </ExpandAnimation>
                 )}
                 {showPreload5[2] && <></>}
                 {showPreload5[0] && <MensagemAuto textOne={<Preload />} />}
                 {showPreload5[1] && (
                     <ExpandAnimation>
-                        <MensagemAudioAuto audio='13'/>
+                        <MensagemAudioAuto audio='13' />
                     </ExpandAnimation>
                 )}
                 {showPreload6[2] && <></>}
                 {showPreload6[0] && <MensagemAuto textOne={<Preload />} />}
                 {showPreload6[1] && (
                     <ExpandAnimation>
-                        <MensagemAudioAuto audio='14'/>
+                        <MensagemAudioAuto audio='14' />
                     </ExpandAnimation>
                 )}
-                
+
                 {showPreload7[2] && <></>}
                 {showPreload7[0] && <MensagemAuto textOne={<Preload />} />}
                 {showPreload7[1] && (
                     <ExpandAnimation>
-                        <MensagemAuto textOne={props.name + ', ¿te gustaría saber más sobre el reto de 21 días?' } textTwo={false} space={false} img={false} />
+                        <MensagemAuto textOne={props.name + ', ¿te gustaría saber más sobre el reto de 21 días?'} textTwo={false} space={false} img={false} />
                     </ExpandAnimation>
                 )}
             </Boxtest2>
         </>
-    )   
+    )
 }
 
 export default Part09;

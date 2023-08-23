@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import MensagemAuto from "../Defaults/MensageDefault";
 import styled, { keyframes } from 'styled-components';
 import Photofixed from "../Defaults/PhotoFixed";
@@ -39,107 +39,90 @@ function Part01(props) {
   const [showPreload7, setShowPreload7] = useState([false, false, true]);
 
   useEffect(() => {
-    const timer1 = setTimeout(() => {
-      setName('Digitando');
-    }, 0);
+    const notifyNewMessage = () => {
+      props.onNewMessage();
+    };
 
-    return () => clearTimeout(timer1);
-  }, []);
+    if (props.status === true) {
 
-  useEffect(() => {
-    const timer2 = setTimeout(() => {
-      setName('Gravando');
-    }, 10000);
+      const preloadTimer1 = setTimeout(() => {
+        setShowPreload1([false, true]);
+        setShowPreload2([true, false, false])
+        notifyNewMessage();
 
-    return () => clearTimeout(timer2);
-  }, []);
+      }, 2000);
 
-  useEffect(() => {
-    const timer3 = setTimeout(() => {
-      setName('Digitando');
-    }, 21000);
+      const preloadTimer2 = setTimeout(() => {
+        setShowPreload2([false, true, false]);
+        setShowPreload3([true, false, false])
+        notifyNewMessage();
+      }, 4000);
 
-    return () => clearTimeout(timer3);
-  }, []);
+      const preloadTimer3 = setTimeout(() => {
+        setShowPreload3([false, true, false]);
+        setShowPreload4([true, false, false])
+        notifyNewMessage();
+      }, 6000);
 
-  useEffect(() => {
-    const timer4 = setTimeout(() => {
-      setName('Online');
-    }, 24000);
+      const preloadTimer4 = setTimeout(() => {
+        setShowPreload4([false, true, false]);
+        setShowPreload5([true, false, false])
 
-    return () => clearTimeout(timer4);
-  }, []);
+        notifyNewMessage();
+      }, 8000);
 
-  useEffect(() => {
-    const preloadTimer = setTimeout(() => {
-      setShowPreload1([false, true]);
-      setShowPreload2([true, false, false])
-      notifyNewMessage();
+      const preloadTimer5 = setTimeout(() => {
+        setShowPreload5([false, true, false]);
+        setShowPreload6([true, false, false])
 
-    }, 2000);
-    return () => clearTimeout(preloadTimer)
-  }, []);
+        notifyNewMessage();
+      }, 10000);
 
-  useEffect(() => {
-    const preloadTimer = setTimeout(() => {
-      setShowPreload2([false, true, false]);
-      setShowPreload3([true, false, false])
-      notifyNewMessage();
-    }, 4000);
-    return () => clearTimeout(preloadTimer)
-  }, []);
+      const preloadTimer6 = setTimeout(() => {
+        setShowPreload6([false, true, false]);
+        setShowPreload7([true, false, false])
+        notifyNewMessage();
+      }, 21000);
 
-  useEffect(() => {
-    const preloadTimer = setTimeout(() => {
-      setShowPreload3([false, true, false]);
-      setShowPreload4([true, false, false])
-      notifyNewMessage();
-    }, 6000);
-    return () => clearTimeout(preloadTimer)
-  }, []);
+      const preloadTimer7 = setTimeout(() => {
+        setShowPreload7([false, true, false]);
+        notifyNewMessage();
+        props.activateBoxInput(0);
+      }, 24000);
 
-  useEffect(() => {
-    const preloadTimer = setTimeout(() => {
-      setShowPreload4([false, true, false]);
-      setShowPreload5([true, false, false])
+      const timer1 = setTimeout(() => {
+        setName('Digitando');
+      }, 0);
 
-      notifyNewMessage();
-    }, 8000);
-    return () => clearTimeout(preloadTimer)
-  }, []);
+      const timer2 = setTimeout(() => {
+        setName('Gravando');
+      }, 10000);
 
-  useEffect(() => {
-    const preloadTimer = setTimeout(() => {
-      setShowPreload5([false, true, false]);
-      setShowPreload6([true, false, false])
+      const timer3 = setTimeout(() => {
+        setName('Digitando');
+      }, 21000);
 
-      notifyNewMessage();
-    }, 10000);
-    return () => clearTimeout(preloadTimer)
-  }, []);
+      const timer4 = setTimeout(() => {
+        setName('Online');
+      }, 24000);
 
-  useEffect(() => {
+      return () => {
+        clearTimeout(preloadTimer1);
+        clearTimeout(preloadTimer2);
+        clearTimeout(preloadTimer3);
+        clearTimeout(preloadTimer4);
+        clearTimeout(preloadTimer5);
+        clearTimeout(preloadTimer6);
+        clearTimeout(preloadTimer7);
+        clearTimeout(timer1);
+        clearTimeout(timer2);
+        clearTimeout(timer3);
+        clearTimeout(timer4);
+      };
+    }
+    // eslint-disable-next-line
+  }, [props.status, notifyNewMessage, props, setName]);
 
-    const preloadTimer = setTimeout(() => {
-      setShowPreload6([false, true, false]);
-      setShowPreload7([true, false, false])
-      notifyNewMessage();
-    }, 21000);
-    return () => clearTimeout(preloadTimer)
-  }, []);
-
-  useEffect(() => {
-    const preloadTimer = setTimeout(() => {
-      setShowPreload7([false, true, false]);
-      notifyNewMessage();
-      props.activateBoxInput(0);
-    }, 24000);
-    return () => clearTimeout(preloadTimer)
-  }, []);
-
-  const notifyNewMessage = () => {
-    props.onNewMessage();
-  };
 
   return (
     <>

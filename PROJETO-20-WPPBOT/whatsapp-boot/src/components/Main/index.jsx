@@ -134,14 +134,12 @@ function Main() {
 
     const link = 'https://pay.hotmart.com/E76959711Y?off=krqi4sbu&checkoutMode=10&bid=1692740611137'
 
-
-
     return (
         <>
             <ChatBox ref={chatBoxRef}>
 
                 <BoxFixedAuto>
-                    <Part01 activateBoxInput={activateBoxInput} onNewMessage={adicionarMensagem} />
+                    <Part01 activateBoxInput={activateBoxInput} onNewMessage={adicionarMensagem} status={true}/>
                 </BoxFixedAuto>
 
                 <BoxFixedAuto>

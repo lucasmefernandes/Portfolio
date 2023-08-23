@@ -29,13 +29,12 @@ function Part06(props) {
     const [showPreload1, setShowPreload1] = useState([false, false, true]);
     const [showPreload2, setShowPreload2] = useState([false, false, true]);
     const [showPreload3, setShowPreload3] = useState([false, false, true]);
-    const notifyNewMessage = () => {
-        props.onNewMessage();
-      };
-      
-    
 
     useEffect(() => {
+        const notifyNewMessage = () => {
+            props.onNewMessage();
+        };
+
         if (props.status === true) {
 
             const preloadTimer1 = setTimeout(() => {
@@ -78,7 +77,8 @@ function Part06(props) {
                 clearTimeout(timer2);
             };
         }
-    }, [props.status]);
+        // eslint-disable-next-line
+    }, [notifyNewMessage, props, setName]);
 
     return (
 
