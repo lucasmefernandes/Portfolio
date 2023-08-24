@@ -126,6 +126,18 @@ const ErrorMessage = styled.div`
   margin-top: 5px;
 `;
 
+const Triangle  = styled.div`
+    position: absolute;
+    left: 103px;
+    top: -2.2px;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #D9FDD2; 
+    transform: rotate(314deg)
+`
+
 function BoxClient(props) {
 
     const [inputValue, setInputValue] = useState('')
@@ -179,19 +191,7 @@ function BoxClient(props) {
                             <DivBoxResult>
                                 <DivResult>
                                     <ButtonClientResult>{inputValue}</ButtonClientResult>
-                                    <Svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="20"
-                                        height="20"
-                                        viewBox="0 0 100 100"
-                                        className="sc-kDnyCx dwrxBe"
-                                    >
-                                        <polygon
-                                            points="0,0 100,0 100,100"
-                                            fill="#D9FDD2"
-                                            transform="rotate(270 50 50)"
-                                        ></polygon>
-                                    </Svg>
+                                    <Triangle />
                                 </DivResult>
                             </DivBoxResult>
                         ) : (
