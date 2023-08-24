@@ -166,13 +166,13 @@ function Main() {
                     <Part04 name={nameUsuario} status={elementosVisiveis.Part04} activateBoxInput={activateBoxInput} onNewMessage={adicionarMensagem} />
                 </BoxFixedAuto>
 
-                <BoxInput onSubmit={handleWeightSubmit} place='Introduzca sólo números' status={isBoxInputActive[2]} req='idade' />
+                <BoxInput onSubmit={handleWeightSubmit} place='Introduzca sólo números' status={isBoxInputActive[2]} req='peso' />
 
                 <BoxFixedAuto>
                     <Part05 status={elementosVisiveis.Part05} activateBoxInput={activateBoxInput} onNewMessage={adicionarMensagem} />
                 </BoxFixedAuto>
 
-                <BoxInput onSubmit={handleAgeSubmit} place='Introduzca su edad ' status={isBoxInputActive[3]} req='peso' />
+                <BoxInput onSubmit={handleAgeSubmit} place='Introduzca su edad ' status={isBoxInputActive[3]}  req='idade' />
 
                 <BoxFixedAuto>
                     <Part06 age={ageUser} name={nameUsuario} weight={weightUser} status={elementosVisiveis.Part06} activateBoxInput={activateBoxInput} onNewMessage={adicionarMensagem} />
