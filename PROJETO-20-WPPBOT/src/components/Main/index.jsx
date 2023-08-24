@@ -18,7 +18,6 @@ import Part12 from './Part12/Index.jsx';
 
 const ChatBox = styled.div`
     position: relative;
-    bottom: 65px;
     width: 800px;
     height: 700px;
     overflow: auto;

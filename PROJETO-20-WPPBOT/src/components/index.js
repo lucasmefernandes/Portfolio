@@ -12,7 +12,6 @@ const MainCentralize = styled.div`
     justify-content: center;
     background:  #e5ddd5;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.06);
-    padding-bottom: 20px;
 
     &::before {
         content: "";
