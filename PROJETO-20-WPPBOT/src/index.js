@@ -11,10 +11,6 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   }
-
-  body {
-    
-  }
 `;
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -29,6 +29,11 @@ const DivBox = styled.div`
     height: 20px;
     background: linear-gradient(135deg, #dcf8c6 100%);
   }
+
+    @media (min-width: 320px) and (max-width: 768px) {
+        font-size: 12px;
+    }
+}
 `
 
 const Space = styled.div`

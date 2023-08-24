@@ -9,7 +9,6 @@ const MainCentralize = styled.div`
     width: 100%;
     height: 90.8vh; 
     display: flex;
-    align-items: center;
     justify-content: center;
     background:  #e5ddd5;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.06);
@@ -27,7 +26,7 @@ const MainCentralize = styled.div`
     }
 
     @media (min-width: 0px) and (max-width: 1024px) {
-      height: 90vh; 
+      height: 100%
   }
 `;
 

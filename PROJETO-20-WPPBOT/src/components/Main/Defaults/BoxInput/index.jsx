@@ -132,15 +132,27 @@ function BoxClient(props) {
 
         let isNumbers = Number(inputValue)
         
-        if (props.req === 'Number' || props.req === 'Number2') {
-            if (isNaN(isNumbers) || isNumbers <= 40) {
+        if (props.req === 'idade' || props.req === 'peso') {
+            if (isNaN(isNumbers)) {
+                setPlaceholder("La entrada debe ser un número.")
+                setInputValue("");
+                return setError(true);
+            }
+
+            if(props.req === 'idade' && isNumbers < 18) {
+                setPlaceholder("La entrada debe ser un número mayor que 18.")
+                setInputValue("");
+                return setError(true);
+            }
+
+            if(props.req === 'peso' && isNumbers <= 40) {
                 setPlaceholder("La entrada debe ser un número mayor que 40.")
                 setInputValue("");
                 return setError(true);
             }
         }
         
-        if (props.req === 'text' && !/^[A-Za-z]+$/.test(inputValue)) {
+        if (props.req === 'text' && !/^[A-Za-z]/.test(inputValue)) {
             setPlaceholder('La entrada debe ser un texto.')
             setInputValue("")
             return setError(true);

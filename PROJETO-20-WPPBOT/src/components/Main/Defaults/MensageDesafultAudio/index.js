@@ -20,9 +20,10 @@ const AudioP = styled.div`
     padding: 12px;
     background: #fff;
     border-radius: 10px;
-    font-size: 0.9em;
     color: #303235;
     font-size: 16px;
+
+   
 `
 
 function MensagemAudioAuto(props) {
