@@ -69,9 +69,9 @@ function Main() {
     const [ageUser, setAgeUser] = useState('')
     const [weightUser, setWeightUserUser] = useState('')
     const [elementosVisiveis, setElementosVisiveis] = useState({
-        Part03: true,
-        Part04: true,
-        Part05: true,
+        Part03: false,
+        Part04: false,
+        Part05: false,
         Part06: false,
         Part07: false,
         Part08: false,
@@ -112,7 +112,7 @@ function Main() {
         toggleVisibilidade('Part05')
     };
 
-    const [isBoxInputActive, setIsBoxInputActive] = useState([false, true, true, true, false, false, false, false, false, false, false,]);
+    const [isBoxInputActive, setIsBoxInputActive] = useState([false, false, false, false, false, false, false, false, false, false, false,]);
 
     const activateBoxInput = (n) => {
         setIsBoxInputActive(prevState => {
@@ -147,7 +147,7 @@ function Main() {
         <>
             <ChatBox ref={chatBoxRef}>
                 <MensegerFix text="Ésta es una cuenta comercial y no recibimos llamadas " status={true} />
-{/* 
+
                 <BoxFixedAuto>
                     <Part01 activateBoxInput={activateBoxInput} onNewMessage={adicionarMensagem} />
                 </BoxFixedAuto>
@@ -156,7 +156,7 @@ function Main() {
                     <Button onClick={() => toggleVisibilidade('Part03', 'Btn1')} disabled={buttonOff.Btn1} >
                         <Part02 text='¡SÍ!' status={isBoxInputActive[0]} />
                     </Button>
-                </BoxFixedAuto> */}
+                </BoxFixedAuto>
 
                 <BoxFixedAuto>
                     <Part03 status={elementosVisiveis.Part03} activateBoxInput={activateBoxInput} onNewMessage={adicionarMensagem} />
@@ -175,7 +175,7 @@ function Main() {
 
                 <BoxInput onSubmit={handleAgeSubmit} place='Introduzca su edad ' status={isBoxInputActive[3]} req='peso' />
 
-                {/* <BoxFixedAuto>
+                <BoxFixedAuto>
                     <Part06 age={ageUser} name={nameUsuario} weight={weightUser} status={elementosVisiveis.Part06} activateBoxInput={activateBoxInput} onNewMessage={adicionarMensagem} />
                 </BoxFixedAuto>
 
@@ -247,7 +247,7 @@ function Main() {
                     <a href={link}>
                         <ButtonEnd text='Regístrate' text2='Haga clic en regístrate para completar su registro' status={true} />
                     </a>
-                </BoxFixedAuto>  */}
+                </BoxFixedAuto> 
 
             </ChatBox>
         </>
