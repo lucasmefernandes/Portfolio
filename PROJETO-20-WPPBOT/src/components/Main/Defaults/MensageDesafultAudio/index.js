@@ -11,6 +11,10 @@ const Message = styled.div`
 const Svg = styled.svg`
     position: relative;
     right: -8px;
+
+    @media (min-width: 320px) and (max-width: 475px) {
+        right: -7px;
+    }
 `
 const AudioP = styled.div`
     position: relative;
@@ -22,6 +26,10 @@ const AudioP = styled.div`
     border-radius: 10px;
     color: #303235;
     font-size: 16px;
+
+    @media (min-width: 320px) and (max-width: 475px) {
+        padding: 7px;
+    }
 
    
 `

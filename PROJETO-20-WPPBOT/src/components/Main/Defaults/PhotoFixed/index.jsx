@@ -15,12 +15,21 @@ const BoxImage = styled.img`
     height: 40px;
     border-radius: 100%;
     margin-bottom: 8px;
+
+    @media (min-width: 320px) and (max-width: 475px) {
+        width: 35px;
+        height: 35px;
+    }
 `
 
 const Boxtest1 = styled.div`
     margin: 0 16px;
     display: flex;
     flex-direction: column;
+
+    @media (min-width: 320px) and (max-width: 475px) {
+        margin: 0;
+    }
 `
 
 function Photofixed() {

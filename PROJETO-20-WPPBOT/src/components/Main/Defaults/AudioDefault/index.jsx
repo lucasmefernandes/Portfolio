@@ -17,6 +17,14 @@ const BoxImageAudio = styled.div`
         height: 50px;
         border-radius: 100%;
     }
+
+    @media (min-width: 320px) and (max-width: 475px) {
+        & img {
+        
+        width: 35px;
+        height: 35px;
+        }
+    }
 `
 
 const IconContainer = styled.div`
@@ -29,12 +37,26 @@ const IconContainer = styled.div`
         right: 50px;
         font-size: 20px
     }
+
+    @media (min-width: 320px) and (max-width: 475px) {
+        & i {
+            top: 25px;
+            right: 35px;
+            font-size: 15px
+        }
+    }
+
+    
 `
 
 const Icon = styled.i`
     font-size: 1.4em;
     color: #4ad954;
     transition: color 1s ease;
+
+    @media (min-width: 320px) and (max-width: 475px) {
+        font-size: 1em;
+    }
 `
 
 const ButtonPlay = styled.div`
@@ -62,6 +84,10 @@ const ProgressArea = styled.div`
             pointer-events: auto;
         }
     }
+
+    @media (min-width: 320px) and (max-width: 475px) {
+        width: 130px;
+    }
 `
 
 const ProgressBar = styled.div`
@@ -87,6 +113,8 @@ const ProgressBar = styled.div`
         background: inherit;
         transition: background 1s ease, opacity 1s ease;
     }
+
+    
 
 `
 
