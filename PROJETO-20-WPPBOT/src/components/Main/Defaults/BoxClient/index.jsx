@@ -24,6 +24,9 @@ const Svg = styled.svg`
     position: absolute;
     right: 0px;
     bottom: 25px;
+
+    @media (min-width: 320px) and (max-width: 768px){
+    bottom: 20px;}
 `
 
 const DivBox = styled.div`
@@ -54,6 +57,10 @@ const ButtonClient = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media (min-width: 320px) and (max-width: 768px) {
+      font-size: 12px;
+    }
 
 
     &:hover {
