@@ -30,7 +30,7 @@ const ChatBox = styled.div`
     @media (min-width: 350px) and (max-width: 768px) {
         bottom: 0px;
         width: 400px;
-        height: 600px;
+        height: 500px;
 
         p {
             font-size: 14px;
@@ -76,7 +76,7 @@ function Main() {
         Part08: false,
         Part09: false,
         Part10: false,
-        Part11: false,
+        Part11: true,
         Part12: false
     });
     const [buttonOff, setButtonOff] = useState({
@@ -111,7 +111,7 @@ function Main() {
         toggleVisibilidade('Part05')
     };
 
-    const [isBoxInputActive, setIsBoxInputActive] = useState([false, false, false, false, false, false, false, false, false, false, false,]);
+    const [isBoxInputActive, setIsBoxInputActive] = useState([false, false, false, false, false, false, false, false, false, false, false]);
 
     const activateBoxInput = (n) => {
         setIsBoxInputActive(prevState => {
@@ -145,7 +145,7 @@ function Main() {
     return (
         <>
             <ChatBox ref={chatBoxRef}>
-                <MensegerFix text="Ésta es una cuenta comercial y no recibimos llamadas " status={true} />
+                {/* <MensegerFix text="Ésta es una cuenta comercial y no recibimos llamadas " status={true} />
 
                 <BoxFixedAuto>
                     <Part01 activateBoxInput={activateBoxInput} onNewMessage={adicionarMensagem} />
@@ -198,9 +198,9 @@ function Main() {
 
                 <BoxFixedAuto>
                     <Part08 status={elementosVisiveis.Part08} activateBoxInput={activateBoxInput} onNewMessage={adicionarMensagem} />
-                </BoxFixedAuto>
+                </BoxFixedAuto> */}
 
-                <BoxFixedAuto>
+                {/* <BoxFixedAuto>
                     <Button
                         onClick={() => toggleVisibilidade('Part09', 'Btn4')} disabled={buttonOff.Btn4} >
                         <Part02 text='¡Sí, lo haría!' status={isBoxInputActive[6]} />
@@ -226,13 +226,13 @@ function Main() {
                         onClick={() => toggleVisibilidade('Part11', 'Btn6')} disabled={buttonOff.Btn6} >
                         <Part02 text='Sí, quiero participar' status={isBoxInputActive[8]} />
                     </Button>
-                </BoxFixedAuto>
+                </BoxFixedAuto> */}
 
                 <BoxFixedAuto>
                     <Part11 name={nameUsuario} status={elementosVisiveis.Part11} activateBoxInput={activateBoxInput} onNewMessage={adicionarMensagem} />
                 </BoxFixedAuto>
 
-                <BoxFixedAuto>
+                {/* <BoxFixedAuto>
                     <Button
                         onClick={() => toggleVisibilidade('Part12', 'Btn7')} disabled={buttonOff.Btn7} >
                         <Part02 text='¡Sí, me encantaría!' status={isBoxInputActive[9]} />
@@ -240,13 +240,13 @@ function Main() {
                 </BoxFixedAuto> 
                 <BoxFixedAuto>
                     <Part12 name={nameUsuario} status={elementosVisiveis.Part12} activateBoxInput={activateBoxInput} onNewMessage={adicionarMensagem} />
-                </BoxFixedAuto>
+                </BoxFixedAuto> *
 
                 <BoxFixedAuto onClick={() => toggleVisibilidade('Part13', 'Btn8')} style={{ display: isBoxInputActive[10] ? 'flex' : 'none' }}>
                     <a href={link}>
                         <ButtonEnd text='Regístrate' text2='Haga clic en regístrate para completar su registro' status={true} />
                     </a>
-                </BoxFixedAuto> 
+                </BoxFixedAuto>  */}
 
             </ChatBox>
         </>

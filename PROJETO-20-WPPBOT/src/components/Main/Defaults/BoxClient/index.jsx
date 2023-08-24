@@ -96,6 +96,18 @@ const PingSpan = styled.span`
     }
 `;
 
+const Triangle  = styled.div`
+    position: absolute;
+    left: 152px;
+    top: -2.2px;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #D9FDD2; 
+    transform: rotate(314deg)
+`
+
 function BoxClient(props) {
 
     const [click, setClick] = useState(false)
@@ -111,7 +123,7 @@ function BoxClient(props) {
                     {click ?
                         <DivBox color='#D9FDD2'>
                             <ButtonClient color='#D9FDD2' color1='#000'>{props.text}</ButtonClient>
-                            <Svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 100 100"><polygon points="0,0 100,0 100,100" fill="#D9FDD2" transform="rotate(270 50 50)"></polygon></Svg>
+                            <Triangle />
                         </DivBox>
                         : 
                         <DivBox onClick={handleClick}>

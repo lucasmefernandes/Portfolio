@@ -8,14 +8,6 @@ const Message = styled.div`
   margin: 5px 0;
 `
 
-const Svg = styled.svg`
-    position: relative;
-    right: -8px;
-
-    @media (min-width: 320px) and (max-width: 475px) {
-        right: -7px;
-    }
-`
 const AudioP = styled.div`
     position: relative;
     right: 0;
@@ -34,14 +26,23 @@ const AudioP = styled.div`
    
 `
 
+const Triangle  = styled.div`
+    position: absolute;
+    left: -10px;
+    top: -2px;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #fff; 
+    transform: rotate(44deg)
+`
+
 function MensagemAudioAuto(props) {
     return (
         <>
             <Message>
-                <Svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 100 100">
-                    <polygon points="0,0 100,0 100,100" fill="#fff" transform="rotate(0 50 50)" />
-                </Svg>
-
+                <Triangle />
                 <AudioP>
                     <AudioAuto audioNumber={props.audio} />
                 </AudioP>

@@ -2,12 +2,12 @@ import styled from "styled-components";
 import Header from "./Header";
 import Main from "./Main"
 import wallpaper from "../img/pattern.png"
-import Footer from "./xFooter";
+
 
 const MainCentralize = styled.div`
     position: relative;
     width: 100%;
-    height: 90.8vh; 
+    height: 100vh; 
     display: flex;
     justify-content: center;
     background:  #e5ddd5;
@@ -23,22 +23,16 @@ const MainCentralize = styled.div`
         background: url(${wallpaper});
         opacity: 0.06;
     }
-
-    @media (min-width: 0px) and (max-width: 1024px) {
-      height: 100%
-  }
-`;
+  `;
 
 function Home() {
 
   return (
     <>
       <Header />
-      
       <MainCentralize>
         <Main />
       </MainCentralize>
-      <Footer />
     </>
   )
 }
