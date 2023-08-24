@@ -30,7 +30,7 @@ const ChatBox = styled.div`
     @media (min-width: 350px) and (max-width: 768px) {
         bottom: 0px;
         width: 400px;
-        height: 500px;
+        height: 600px;
 
         p {
             font-size: 14px;
