@@ -1060,8 +1060,34 @@ video {
     height: 24rem;
   }
 
+  .max-\[640px\]\:h-20 {
+    height: 5rem;
+  }
+
+  .max-\[640px\]\:w-8 {
+    width: 2rem;
+  }
+
+  .max-\[640px\]\:w-80 {
+    width: 20rem;
+  }
+
+  .max-\[640px\]\:w-20 {
+    width: 5rem;
+  }
+
   .max-\[640px\]\:rounded-lg {
     border-radius: 0.5rem;
+  }
+
+  .max-\[640px\]\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .max-\[640px\]\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }
 

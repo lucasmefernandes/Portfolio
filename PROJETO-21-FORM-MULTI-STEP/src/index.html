@@ -13,26 +13,26 @@
 
     <div class="container-sm flex items-center justify-center flex-col mx-auto h-screen">
 
-        <div class="flex items-center justify-center">
-            <div class="relative flex h-20 w-24 justify-end items-center flex-col px-4 py-2 icons">
+        <div class="flex items-center justify-center max-[640px]:w-80">
+            <div class="relative flex max-[640px]:w-20 h-20 w-24 justify-end items-center flex-col px-4 py-2 icons">
                 <div class="rounded-full bg-gray-200 h-8 w-8 flex items-center justify-center lineCard activeCard">
                     <i class="fas fa-list-check text-white"></i>
                 </div>
                 <div class="font-bold text-white active">Empresa</div>
             </div>
-            <div class="relative flex h-20 w-24 justify-end items-center flex-col px-4 py-2 icons">
+            <div class="relative flex max-[640px]:w-20 h-20 w-24 justify-end items-center flex-col px-4 py-2 icons">
                 <div id="lineIcon1" class="rounded-full bg-gray-200 h-8 w-8 flex items-center justify-center lineCard">
                     <i class="fa-solid fa-map-location-dot text-white"></i>
                 </div>
                 <div id="iconText1" class="font-bold text-white">Endereço</div>
             </div>
-            <div class="relative flex h-20 w-24 justify-end items-center flex-col px-4 py-2 icons">
+            <div class="relative flex max-[640px]:w-20 h-20 w-24 justify-end items-center flex-col px-4 py-2 icons">
                 <div id="lineIcon2" class="rounded-full bg-gray-200 h-8 w-8 flex items-center justify-center lineCard">
                     <i class="fa-regular fa-id-badge text-white"></i>
                 </div>
                 <div id="iconText2" class="font-bold text-white">Contato</div>
             </div>
-            <div class="relative flex h-20 w-24 justify-end items-center flex-col px-4 py-2 icons">
+            <div class="relative flex max-[640px]:w-20 h-20 w-24 justify-end items-center flex-col px-4 py-2 icons">
                 <div id="lineIcon3" class="rounded-full bg-gray-200 h-8 w-8 flex items-center justify-center lineCard">
                     <i class="fa-solid fa-user-check text-white"></i>
                 </div>
@@ -47,8 +47,8 @@
             <div class="">
                 <form id="multi-step-form">
 
-                    <div class="step h-bigCard w-96 max-[640px]:rounded-lg rounded-r-lg p-4 bg-BaseGreen-500" data-step="1">
-                        <h2 class="text-2xl font-bold text-white mb-4">Passo 1: Dados da Empresa</h2>
+                    <div class="step h-bigCard max-[640px]:w-80 w-96 max-[640px]:rounded-lg rounded-r-lg p-4 bg-BaseGreen-500" data-step="1">
+                        <h2 class="text-2xl font-bold text-white mb-4 max-[640px]:text-xl">Passo 1: Dados da Empresa</h2>
                         <div class="relative mb-4">
                             <input type="text" id="cnpj"
                                 class="block rounded-md px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 focus:outline-none focus:ring-0 peer"
@@ -76,8 +76,8 @@
                             data-step="2">Próximo</button>
                     </div>
 
-                    <div class="step h-bigCard w-96 max-[640px]:rounded-lg rounded-r-lg p-4 bg-BaseGreen-500 hidden" data-step="2">
-                        <h2 class="text-2xl font-bold text-white mb-4">Passo 2: Endereço</h2>
+                    <div class="step h-bigCard w-96 max-[640px]:w-80 max-[640px]:rounded-lg rounded-r-lg p-4 bg-BaseGreen-500 hidden" data-step="2">
+                        <h2 class="text-2xl font-bold text-white mb-4 max-[640px]:text-xl">Passo 2: Endereço</h2>
                         <div class="grid grid-cols-2">
 
                             <div class="relative mb-4">
@@ -139,8 +139,8 @@
                             data-step="3">Próximo</button>
                     </div>
 
-                    <div class="step  h-bigCard w-96 max-[640px]:rounded-lg rounded-r-lg p-4 bg-BaseGreen-500 hidden" data-step="3">
-                        <h2 class="text-2xl font-bold text-white mb-4">Passo 3: Contato</h2>
+                    <div class="step  h-bigCard w-96 max-[640px]:w-80 max-[640px]:rounded-lg rounded-r-lg p-4 bg-BaseGreen-500 hidden" data-step="3">
+                        <h2 class="text-2xl font-bold text-white mb-4 max-[640px]:text-xl">Passo 3: Contato</h2>
 
                         <div class="grid grid-cols-3">
                             <div class="relative mb-4">
@@ -174,8 +174,8 @@
                             data-step="4">Próximo</button>
                     </div>
 
-                    <div class="step h-bigCard w-96 max-[640px]:rounded-lg rounded-r-lg p-4 bg-BaseGreen-500 hidden" data-step="4">
-                        <h2 class="text-2xl font-bold text-white mb-4">Passo 4: Informações da Conta</h2>
+                    <div class="step h-bigCard w-96 max-[640px]:w-80 max-[640px]:rounded-lg rounded-r-lg p-4 bg-BaseGreen-500 hidden" data-step="4">
+                        <h2 class="text-2xl font-bold text-white mb-4 max-[640px]:text-xl">Passo 4: Informações da Conta</h2>
 
                         <div class="relative mb-4">
                             <input type="text" id="nome"
