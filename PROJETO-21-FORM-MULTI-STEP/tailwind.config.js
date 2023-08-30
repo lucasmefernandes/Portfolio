@@ -20,7 +20,7 @@ module.exports = {
       },
       spacing: {
         'bigCard': '28.2rem'
-      }
+      },
     },
   },
   plugins: [],

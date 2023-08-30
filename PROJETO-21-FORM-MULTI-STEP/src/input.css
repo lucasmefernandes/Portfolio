@@ -4,10 +4,10 @@
 
 
 .hoverClick {
-    @apply hover:bg-BaseGreen-400 hover:text-BaseGreen-900 hover:border hover:border-BaseGreen-900;
+    @apply bg-BaseGreen-400 text-BaseGreen-900 border border-BaseGreen-900;
 }
 
-.active { 
+.active {
     color: #71e4b4;
 }
 
@@ -30,4 +30,26 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: -1;
+}
+
+@keyframes pulse-swing {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+    25% {
+        transform: translateY(-15px) rotate(0);
+    }
+    50% {
+        transform: translateY(10px) rotate(0);
+    }
+    75% {
+        transform: translateY(-5px) rotate(0);
+    }
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+}
+
+.animate-pulse-swing {
+    animation: pulse-swing 3s ease-in-out infinite;
 }

@@ -21,7 +21,6 @@ export async function verificaCEP(cep, numero) {
 
         const consultaCEP = await fetch(`https://viacep.com.br/ws/${cepLimpo}/json/`);
         const consultaCEPConvertida = await consultaCEP.json();
-
         if (consultaCEPConvertida.erro) {
             clear();
             createAlert();

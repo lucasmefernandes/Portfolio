@@ -67,6 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
             e.preventDefault()
             const formData = enviarDados();
             console.log(formData);
+            window.location.href = "/src/submit.html";
         } else {
             e.preventDefault()
             createAlert();
