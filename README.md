@@ -79,7 +79,7 @@ Basta clicar no Link para visualizar o projeto! (Sites hospedados atráves do Gi
     Executar o PROJETO-20-MEU-SITE-V2
 </a>
 <br>
-<a href="https://lucasmefernandes.github.io/Portfolio/PROJETO-14-JOGO-SIMON/index.html" target="_blank">
+<a href="https://lucasmefernandes.github.io/Portfolio/PROJETO-21-FORM-MULTI-STEP/src/index.html" target="_blank">
     Executar o PROJETO-14-JOGO-SIMON
 </a>
 
