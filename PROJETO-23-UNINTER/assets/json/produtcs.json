@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Arroz Branco",
+    "price": 5.49,
+    "image": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw3e2924b4/images/col/494/4949515-frente.jpg?sw=2000&sh=2000"
+  },
+  {
+    "id": 2,
+    "name": "Feijão Preto",
+    "price": 6.29,
+    "image": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw7e2954cb/images/col/285/2859833-frente.jpg?sw=2000&sh=2000"
+  },
+  {
+    "id": 3,
+    "name": "Macarrão Espaguete",
+    "price": 3.19,
+    "image": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw81515b3e/images/col/214/2144139-frente.jpg?sw=2000&sh=2000"
+  },
+  {
+    "id": 4,
+    "name": "Óleo de Soja",
+    "price": 4.99,
+    "image": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw6eb8c616/images/col/440/4403919-frente.jpg?sw=2000&sh=2000"
+  },
+  {
+    "id": 5,
+    "name": "Açúcar Refinado",
+    "price": 2.89,
+    "image": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw52fd4a99/images/col/503/5038799-frente.jpg?sw=2000&sh=2000"
+  },
+  {
+    "id": 6,
+    "name": "Sal de Cozinha",
+    "price": 1.19,
+    "image": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dwa132d31a/images/col/562/5621157-hero.jpg?sw=2000&sh=2000"
+  },
+  {
+    "id": 7,
+    "name": "Leite Integral",
+    "price": 3.69,
+    "image": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw9a1f7d66/images/col/687/6879912-frente.jpg?sw=2000&sh=2000"
+  },
+  {
+    "id": 8,
+    "name": "Café Torrado e Moído",
+    "price": 7.99,
+    "image": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw39e63b8c/images/col/532/5323452-frente.png?sw=2000&sh=2000"
+  },
+  {
+    "id": 9,
+    "name": "Farinha de Trigo",
+    "price": 2.79,
+    "image": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw2248ed16/images/col/238/2388667-hero.jpg?sw=2000&sh=2000"
+  },
+  {
+    "id": 10,
+    "name": "Manteiga",
+    "price": 8.49,
+    "image": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dwc9ad1da4/images/col/221/2211084-frente.png?sw=2000&sh=2000"
+  },
+  {
+    "id": 11,
+    "name": "Banana Nanica",
+    "price": 2.5,
+    "image": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dwcd554331/images/col/259/2597619-frente.jpg?sw=2000&sh=2000"
+  },
+  {
+    "id": 12,
+    "name": "Tomate",
+    "price": 4.2,
+    "image": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw7d37d472/images/col/225/2253796-frente.jpg?sw=2000&sh=2000"
+  },
+  {
+    "id": 13,
+    "name": "Alface",
+    "price": 1.99,
+    "image": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dwbd956a0d/images/col/657/6579807-cima-granel.jpg?sw=2000&sh=2000"
+  },
+  {
+    "id": 14,
+    "name": "Pão de Forma",
+    "price": 6.49,
+    "image": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dwd5b70e28/images/col/624/6246547-frente.jpg?sw=2000&sh=2000"
+  },
+  {
+    "id": 15,
+    "name": "Queijo Mussarela",
+    "price": 24.9,
+    "image": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw2f61c056/images/col/801/8014747-frente.png?sw=2000&sh=2000"
+  },
+  {
+    "id": 16,
+    "name": "Presunto",
+    "price": 19.8,
+    "image": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dwe2ebc1fc/images/col/775/7753652-cima.jpg?sw=2000&sh=2000"
+  },
+  {
+    "id": 17,
+    "name": "Iogurte Natural",
+    "price": 3.99,
+    "image": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw4d460c12/images/col/680/6804954-frente.jpg?sw=2000&sh=2000"
+  },
+  {
+    "id": 18,
+    "name": "Suco de Laranja",
+    "price": 7.9,
+    "image": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dwb7e0c2ee/images/col/635/6352140-hero.jpg?sw=2000&sh=2000"
+  },
+  {
+    "id": 19,
+    "name": "Biscoito de Chocolate",
+    "price": 4.29,
+    "image": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dwb5dae006/images/col/387/3872611-frente.jpg?sw=2000&sh=2000"
+  },
+  {
+    "id": 20,
+    "name": "Cereal Matinal",
+    "price": 8.99,
+    "image": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw402f576f/images/col/801/8016741-hero.jpg?sw=2000&sh=2000"
+  }
+]
