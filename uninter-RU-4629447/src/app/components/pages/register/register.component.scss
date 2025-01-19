@@ -1,0 +1,71 @@
+.cadastro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px;
+  width: 100%;
+}
+
+.container-box {
+  background: linear-gradient(to bottom, #f0f4f8, #ffffff);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px 30px;
+  text-align: justify;
+  max-width: 600px;
+}
+
+.cadastro .container-box h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #4a4a4a;
+  text-align: center;
+}
+
+.cadastro .container-box form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.cadastro .container-box label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.cadastro .container-box input {
+  font-family: 'Roboto', sans-serif;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.cadastro .container-box input:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+
+.cadastro .container-box button {
+  font-family: 'Poppins', sans-serif;
+  background-color: #4a90e2;
+  color: #ffffff;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cadastro .container-box button:hover {
+  background-color: #357ab8;
+}

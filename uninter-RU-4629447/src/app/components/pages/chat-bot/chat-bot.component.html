@@ -1,0 +1,18 @@
+<div class="chatbot-container">
+  <div class="chat-messages">
+    @for (msg of messages; track $index) {
+      <div>
+        <p class="user-message">{{ msg.user }}</p>
+        <p class="bot-message">{{ msg.bot }}</p>
+      </div>
+    }
+  </div>
+  <div class="chat-input">
+    <input
+      [(ngModel)]="userMessage"
+      placeholder="Digite sua mensagem..."
+      (keyup.enter)="sendMessage()"
+    />
+    <button (click)="sendMessage()">Enviar</button>
+  </div>
+</div>

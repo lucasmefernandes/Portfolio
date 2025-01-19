@@ -1,0 +1,38 @@
+header {
+  background-color: #41322a;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header > a,
+nav {
+  margin: 0 60px;
+}
+
+header {
+  width: 100%;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+header > a > img {
+  border-radius: 50%;
+  width: 75px;
+}
